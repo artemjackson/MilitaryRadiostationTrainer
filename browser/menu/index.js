@@ -9,6 +9,6 @@ export default angular.module("menu", [])
             controller: MenuCtrl,
             controllerAs: "ctrl",
             template: require("./template.html"),
-            url: ""
+            url: "^*path"
         });
     });
