@@ -3,7 +3,7 @@
 ## Pre-instaliation
 * `npm install`
 * `bower install`
-* 
+ 
 ## Build
 * `npm run build`
 
