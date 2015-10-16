@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "gulp": "gulp default",
-    "app" : "npm run gulp",
+    "app": "npm run gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Artsiom Stsepanishchau",
@@ -22,6 +22,7 @@
     "gulp-babel": "^5.2.1",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-run": "^1.6.11",
     "gulp-util": "^3.0.6",
