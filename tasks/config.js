@@ -4,7 +4,7 @@ export default {
     electron: {
         src: "app/index.js",
         dest: "index.min.js",
-        bin: "./node_modules/electron-prebuilt/cli.js"
+        bin: "electron"
     },
 
     scripts: {
