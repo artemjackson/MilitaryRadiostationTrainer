@@ -3,8 +3,10 @@
 ## Pre-instaliation
 * `npm install`
 * `bower install`
-## build
+* 
+## Build
 * `npm run build`
+
 ## Running app
 * `npm run app`
 
