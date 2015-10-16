@@ -1,0 +1,68 @@
+.t121-body {
+    background: url("img/t121/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar {
+    width: 15%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.8);
+    border: solid black;
+}
+
+.sidebar input[type="text"] {
+    display: block;
+    width: 90%;
+
+    padding-left: 5%;
+
+    background: rgba(256, 256, 256, 0.05);
+    border: 1px solid black;
+    border-radius: 10px;
+
+    font-family: sans-serif;
+    font-size: 18pt;
+}
+
+.sidebar input[type="text"]:focus {
+    border: 1px solid rgba(256, 256, 256, 0.6);
+    outline: none;
+}
+
+.indicator {
+    margin: 10px;
+}
+
+.indicators label {
+    display: block;
+
+    font-family: sans-serif;
+    font-size: 18pt;
+}
+
+.friction-error-positive {
+    position: absolute;
+    top: 18%;
+    left: 48.5%;
+}
+
+.latitude {
+    position: absolute;
+    top: 16.5%;
+    left: 74.5%;
+}
+
+.friction-error-negative {
+    position: absolute;
+    top: 52%;
+    left: 48.7%;
+}
+
+.balance {
+    position: absolute;
+    top: 52.5%;
+    left: 75.2%;
+}

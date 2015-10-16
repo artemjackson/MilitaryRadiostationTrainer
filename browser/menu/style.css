@@ -1,0 +1,38 @@
+.main-menu-body {
+    background: url("img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.main-menu-content {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+}
+
+.main-menu-header p {
+    text-align: center;
+    font-size: 45pt;
+}
+
+.main-menu-list {
+    position: absolute;
+    top: 130%;
+    left: 30%;
+    width: 40%;
+
+    background: rgba(0, 0, 0, 0.65);
+    border: solid black;
+    border-radius: 45px;
+}
+
+.main-menu-list p {
+    margin: 0;
+}
+
+.main-menu-list ul {
+    text-align: center;
+    list-style-type: none;
+}

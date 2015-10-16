@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+p,
+label,
+input[type="text"],
+a:link,
+a:visited,
+a:active {
+    color: #eeecf3;
+    font: 30pt sans-serif;
+    text-shadow: 3px 3px #323232;
+}
+
+a:link,
+a:visited,
+a:active {
+    font-size: 60pt;
+    text-decoration: none;
+    text-shadow: 5px 5px #323232;
+}
+
+a:hover {
+    color: #faf8ff;
+}
+
+.back-link a {
+    font: 20pt sans-serif;
+    text-shadow: 2px 2px #323232;
+}
+
+.pull-right {
+    position: fixed;
+    right: 3%;
+}
+
+.pull-bottom {
+    position: fixed;
+    bottom: 3%;
+}

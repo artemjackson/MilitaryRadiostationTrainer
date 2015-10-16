@@ -1,0 +1,6 @@
+.about-content {
+    background: url("img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%
+}
