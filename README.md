@@ -1,6 +1,8 @@
 # military-navigation-equipment-trainer
 
-## Pre-instaliation
+nodejs 4.x and npm are required
+
+## Instaling dependencies
 * `npm install`
 * `bower install`
  
