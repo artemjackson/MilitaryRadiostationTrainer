@@ -25,46 +25,50 @@
             <a ui-sref="menu">Вернуться в Меню</a>
         </div>
     </div>
-    <div class="t121-knob-controls">
-        <div t121-knob-control class="friction-error-positive"
-             name="Поправка на трение"
-             init-value="0"
-             min-value="0"
-             max-value="23"
-             init-angle="0"
-             min-angle="0"
-             max-angle="135"
-             current-value="ctrl.frictionErrorValue">
-        </div>
-        <div t121-knob-control class="latitude"
-             name="Установка широты"
-             init-value="0"
-             min-value="0"
-             max-value="70"
-             init-angle="-137"
-             min-angle="-137"
-             max-angle="132"
-             current-value="ctrl.latitudeValue">
-        </div>
-        <div t121-knob-control class="friction-error-negative"
-             name="Поправка на трение"
-             init-value="0"
-             min-value="0"
-             max-value="23"
-             init-angle="0"
-             min-angle="0"
-             max-angle="140"
-             current-value="ctrl.frictionError2Value">
-        </div>
-        <div t121-knob-control class="balance"
-             name="Эл. балансировка"
-             init-value="0"
-             min-value="-230"
-             max-value="240"
-             init-angle="0"
-             min-angle="-140"
-             max-angle="140"
-             current-value="ctrl.balanceValue">
+    <div class="t121-wrapper">
+        <div class="t121">
+            <div class="t121-knob-controls">
+                <div t121-knob-control class="friction-error-positive"
+                     name="Поправка на трение"
+                     init-value="0"
+                     min-value="0"
+                     max-value="23"
+                     init-angle="0"
+                     min-angle="0"
+                     max-angle="138"
+                     current-value="ctrl.frictionErrorValue">
+                </div>
+                <div t121-knob-control class="latitude"
+                     name="Установка широты"
+                     init-value="0"
+                     min-value="0"
+                     max-value="60"
+                     init-angle="-135"
+                     min-angle="-135"
+                     max-angle="135"
+                     current-value="ctrl.latitudeValue">
+                </div>
+                <div t121-knob-control class="friction-error-negative"
+                     name="Поправка на трение"
+                     init-value="0"
+                     min-value="0"
+                     max-value="23"
+                     init-angle="0"
+                     min-angle="0"
+                     max-angle="140"
+                     current-value="ctrl.frictionError2Value">
+                </div>
+                <div t121-knob-control class="balance"
+                     name="Эл. балансировка"
+                     init-value="0"
+                     min-value="-228"
+                     max-value="228"
+                     init-angle="0"
+                     min-angle="-141"
+                     max-angle="141"
+                     current-value="ctrl.balanceValue">
+                </div>
+            </div>
         </div>
     </div>
 </div>
