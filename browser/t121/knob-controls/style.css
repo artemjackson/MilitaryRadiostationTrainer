@@ -1,0 +1,49 @@
+.t121-knob-control-wrapper {
+    height: 30%;
+    width: 16%;
+}
+
+.t121-knob-control {
+    height: 100%;
+    width: 100%;
+
+    background: url("img/t121/knob.png") center center no-repeat;
+    background-size: contain;
+}
+
+.smooth {
+    transition: 60ms linear all;
+}
+
+.t121-knob-control-wrapper:hover > .t121-knob-control-regulators {
+    display: block;
+}
+
+.t121-knob-control-regulators {
+    display: none;
+    position: absolute;
+    top: 33.2%;
+}
+
+.right {
+    right: 18%;
+}
+
+.left {
+    left: 11%
+}
+
+
+.t121-knob-control-regulator {
+    width: 120%;
+    background: rgba(256, 256, 256, 0.3);
+    border: solid 2px #272727;
+    border-radius: 360px;
+    margin: 2%;
+
+    text-align: center;
+    color: #272727;
+    font: 150% sans-serif;
+
+    cursor: pointer;
+}
