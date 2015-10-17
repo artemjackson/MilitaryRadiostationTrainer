@@ -6,6 +6,9 @@ body {
     left: 0;
     right: 0;
 
+    background: url("img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+
     -webkit-user-select: none;
     cursor: default;
 }
@@ -31,6 +34,10 @@ a:active {
 
 a:hover {
     color: #faf8ff;
+}
+
+.back-link {
+
 }
 
 .back-link a {
