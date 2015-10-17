@@ -6,68 +6,29 @@
                 <input type="text" id="friction-error" ng-model="ctrl.frictionErrorValue"/>
             </div>
             <div class="indicator">
-
                 <label for="latitude">Установка широты: </label>
                 <input type="text" id="latitude" ng-model="ctrl.latitudeValue"/>
             </div>
             <div class="indicator">
-
                 <label for="friction-error2">Поправка на трение 2: </label>
                 <input type="text" id="friction-error2" ng-model="ctrl.frictionError2Value"/>
             </div>
             <div class="indicator">
-
                 <label for="balance">Эл. балансир:</label>
                 <input type="text" id="balance" ng-model="ctrl.balanceValue"/>
             </div>
         </div>
         <div class="back-link pull-bottom">
-            <a ui-sref="menu">Вернуться в Меню</a>
+            <a ui-sref="menu">&#10092 Вернуться в Меню</a>
         </div>
     </div>
     <div class="t121-wrapper">
         <div class="t121">
             <div class="t121-knob-controls">
-                <div t121-knob-control class="friction-error-positive"
-                     name="Поправка на трение"
-                     init-value="0"
-                     min-value="0"
-                     max-value="23"
-                     init-angle="0"
-                     min-angle="0"
-                     max-angle="138"
-                     current-value="ctrl.frictionErrorValue">
-                </div>
-                <div t121-knob-control class="latitude"
-                     name="Установка широты"
-                     init-value="0"
-                     min-value="0"
-                     max-value="60"
-                     init-angle="-135"
-                     min-angle="-135"
-                     max-angle="135"
-                     current-value="ctrl.latitudeValue">
-                </div>
-                <div t121-knob-control class="friction-error-negative"
-                     name="Поправка на трение"
-                     init-value="0"
-                     min-value="0"
-                     max-value="23"
-                     init-angle="0"
-                     min-angle="0"
-                     max-angle="140"
-                     current-value="ctrl.frictionError2Value">
-                </div>
-                <div t121-knob-control class="balance"
-                     name="Эл. балансировка"
-                     init-value="0"
-                     min-value="-228"
-                     max-value="228"
-                     init-angle="0"
-                     min-angle="-141"
-                     max-angle="141"
-                     current-value="ctrl.balanceValue">
-                </div>
+                <div t121-friction-error-positive-knob-control class="friction-error-positive" current-value="ctrl.frictionErrorValue"></div>
+                <div t121-latitude-knob-control class="latitude" current-value="ctrl.latitudeValue"></div>
+                <div t121-friction-error-negative-knob-control class="friction-error-negative" current-value="ctrl.frictionError2Value"></div>
+                <div t121-balance-knob-control class="balance" current-value="ctrl.balanceValue"></div>
             </div>
         </div>
     </div>
