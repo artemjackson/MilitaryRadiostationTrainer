@@ -1,6 +1,6 @@
 "use strict";
 
-import config from "knobs.config.json";
+import config from "./knobs.config.json";
 
 export default class T121Controller {
     constructor() {
