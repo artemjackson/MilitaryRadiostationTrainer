@@ -43,7 +43,7 @@ export default angular.module("mouse-click-and-hold", [])
             restrict: "A",
             scope: {
                 mouseClickAndHold: "&",
-                interval: "@"
+                interval: "="
             }
         }
     });
