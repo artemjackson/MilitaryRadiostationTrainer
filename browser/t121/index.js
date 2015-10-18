@@ -4,11 +4,11 @@ import angular from "angular";
 
 import training from "./training/index";
 import examination from "./examination/index";
-import knobControls from "./knob-controls/index";
+import knobControl from "./knob-control/index";
 import T121Controller from "./controller";
 
 export default angular.module("t121", [
-        knobControls.name,
+        knobControl.name,
         training.name,
         examination.name
     ])
