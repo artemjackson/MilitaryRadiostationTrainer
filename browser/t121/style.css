@@ -7,7 +7,7 @@
 .t121-wrapper {
     display: inline-block;
     position: relative;
-    width: 85%;
+    width: 80%;
     height: 100%;
 }
 
@@ -22,19 +22,19 @@
 
     background: url("img/t121/t121.png") no-repeat;
     background-size: contain;
-    width: 1024px;
-    height: 650px;
+    width: 1120px;
+    height: 710px;
 }
 
 @media all and (max-width: 1024px) {
     .t121 {
-        width: 900px;
-        height: 570px;
+        width: 820px;
+        height: 520px;
     }
 }
 
 .sidebar {
-    width: 15%;
+    width: 20%;
     height: 100%;
     float: left;
     background: rgba(0, 0, 0, 0.8);
@@ -49,9 +49,6 @@
     background: rgba(256, 256, 256, 0.05);
     border: 1px solid black;
     border-radius: 10px;
-
-    font-family: sans-serif;
-    font-size: 18pt;
 }
 
 .sidebar input[type="text"]:focus {
@@ -65,9 +62,6 @@
 
 .indicators label {
     display: block;
-
-    font-family: sans-serif;
-    font-size: 18pt;
 }
 
 .friction-error-positive {
