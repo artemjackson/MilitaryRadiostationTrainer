@@ -1,36 +1,37 @@
 <div class="t121-body">
-    <div class="sidebar">
-        <ul class="indicators">
-            <li class="indicator">
-                <label for="friction-error">Поправка на трение:</label>
-                <input type="text" id="friction-error" ng-model="ctrl.frictionErrorPositive.value"/>
-            </li>
-            <li class="indicator">
-                <label for="latitude">Установка широты: </label>
-                <input type="text" id="latitude" ng-model="ctrl.latitude.value"/>
-            </li>
-            <li class="indicator">
-                <label for="friction-error2">Поправка на трение 2: </label>
-                <input type="text" id="friction-error2" ng-model="ctrl.frictionErrorNegative.value"/>
-            </li>
-            <li class="indicator">
-                <label for="balance">Эл. балансир:</label>
-                <input type="text" id="balance" ng-model="ctrl.balance.value"/>
-            </li>
-        </ul>
-        <div class="back-link pull-bottom">
-            <a ui-sref="menu">&#10092 Вернуться в Меню</a>
-        </div>
-    </div>
+    <div t121-sidebar
+         friction-error-positive="ctrl.frictionErrorPositive.value"
+         latitude="ctrl.latitude.value"
+         friction-error-negative="ctrl.frictionErrorNegative.value"
+         balance="ctrl.balance.value"
+
+         transformation="ctrl.transformation"
+         heating="ctrl.heating"
+         gyroscope="ctrl.gyroscope"
+         work="ctrl.work"
+         control="ctrl.control"></div>
     <div class="t121-wrapper">
         <div class="t121">
+            <div class="t121-toggles">
+                <div t121-toggle class="transformation" condition="ctrl.transformation"></div>
+                <div t121-toggle class="heating" condition="ctrl.heating"></div>
+                <div t121-toggle class="gyroscope" condition="ctrl.gyroscope"></div>
+                <div t121-toggle class="work" condition="ctrl.work"></div>
+                <div t121-toggle class="control" condition="ctrl.control"></div>
+            </div>
             <div class="t121-knob-controls">
-                <div t121-knob-control class="friction-error-positive" config="ctrl.frictionErrorPositive.config"
+                <div t121-knob-control class="friction-error-positive"
+                     config="ctrl.frictionErrorPositive.config"
                      value="ctrl.frictionErrorPositive.value"></div>
-                <div t121-knob-control class="latitude" config="ctrl.latitude.config" value="ctrl.latitude.value"></div>
-                <div t121-knob-control class="friction-error-negative" config="ctrl.frictionErrorNegative.config"
+                <div t121-knob-control class="latitude"
+                     config="ctrl.latitude.config"
+                     value="ctrl.latitude.value"></div>
+                <div t121-knob-control class="friction-error-negative"
+                     config="ctrl.frictionErrorNegative.config"
                      value="ctrl.frictionErrorNegative.value"></div>
-                <div t121-knob-control class="balance" config="ctrl.balance.config" value="ctrl.balance.value"></div>
+                <div t121-knob-control class="balance"
+                     config="ctrl.balance.config"
+                     value="ctrl.balance.value"></div>
             </div>
         </div>
     </div>
