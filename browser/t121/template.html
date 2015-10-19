@@ -1,23 +1,23 @@
 <div class="t121-body">
     <div class="sidebar">
-        <div class="indicators">
-            <div class="indicator">
+        <ul class="indicators">
+            <li class="indicator">
                 <label for="friction-error">Поправка на трение:</label>
                 <input type="text" id="friction-error" ng-model="ctrl.frictionErrorPositive.value"/>
-            </div>
-            <div class="indicator">
+            </li>
+            <li class="indicator">
                 <label for="latitude">Установка широты: </label>
                 <input type="text" id="latitude" ng-model="ctrl.latitude.value"/>
-            </div>
-            <div class="indicator">
+            </li>
+            <li class="indicator">
                 <label for="friction-error2">Поправка на трение 2: </label>
                 <input type="text" id="friction-error2" ng-model="ctrl.frictionErrorNegative.value"/>
-            </div>
-            <div class="indicator">
+            </li>
+            <li class="indicator">
                 <label for="balance">Эл. балансир:</label>
                 <input type="text" id="balance" ng-model="ctrl.balance.value"/>
-            </div>
-        </div>
+            </li>
+        </ul>
         <div class="back-link pull-bottom">
             <a ui-sref="menu">&#10092 Вернуться в Меню</a>
         </div>
