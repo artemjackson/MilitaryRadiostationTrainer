@@ -1,6 +1,6 @@
 "use strict";
 
-export default class KnobControlCtrl {
+export default class T121KnobControlCtrl {
     constructor() {
         this.marks = this.config.marks;
         this.rotationSpeed = this.config.rotationSpeed;
