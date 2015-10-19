@@ -20,6 +20,7 @@
 .sidebar hr {
     border: 0;
     height: 2px;
+    margin-bottom: 10%;
     background-image: linear-gradient(to right, rgba(256, 256, 256, 0), rgba(256, 256, 256, 0.75), rgba(256, 256, 256, 0));
 }
 
