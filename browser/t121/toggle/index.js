@@ -1,19 +1,19 @@
 "use strict";
 
 import angular from "angular";
-import T121KnobControlCtrl from "./controller";
 
-export default angular.module("t121.knob-control", [])
-    .directive("t121KnobControl", () => {
+import T121ToggleCtrl from "./controller";
+
+export default angular.module("t121.toggle", [])
+    .directive("t121Toggle", () => {
         return {
             bindToController: true,
-            controller: T121KnobControlCtrl,
+            controller: T121ToggleCtrl,
             controllerAs: 'ctrl',
             replace: true,
             restrict: "A",
             scope: {
-                config: "=",
-                value: "="
+                condition: "="
             },
             template: require("./template.html")
         }

@@ -14,35 +14,22 @@ body {
 }
 
 p,
-label,
-input[type="text"],
-a:link,
-a:visited,
-a:active {
+h1, h2,
+label, input[type="text"],
+a:link, a:visited, a:active {
     color: #eeecf3;
-    font: 30pt sans-serif;
-    text-shadow: 3px 3px #323232;
-}
-
-a:link,
-a:visited,
-a:active {
-    font-size: 60pt;
+    font: 2.5vh sans-serif;
     text-decoration: none;
-    text-shadow: 5px 5px #323232;
+    text-shadow: 3px 3px #323232;
 }
 
 a:hover {
     color: #faf8ff;
 }
 
-.back-link {
-
-}
-
-.back-link a {
-    font: 20pt sans-serif;
-    text-shadow: 2px 2px #323232;
+ul {
+    margin-left: -40px;
+    list-style: none;
 }
 
 .pull-right {

@@ -1,51 +1,50 @@
 "use strict";
 
-export default class KnobControllerCtrl {
+export default class T121KnobControlCtrl {
     constructor() {
-        this.initialize();
+        this.marks = this.config.marks;
+        this.rotationSpeed = this.config.rotationSpeed;
+
+        this.minValue = this.marks[0].value;
+        this.maxValue = this.marks[this.marks.length - 1].value;
+
+        this.value = this.minValue;
     }
 
-    get currentValue() {
-        return this._currentValue;
+    get value() {
+        return this._value;
     }
 
-    set currentValue(value) {
-        this._currentValue = value;
+    set value(value) {
+        this._value = value;
+
         value = Number(value);
 
-        if (value >= this._minValue && value <= this._maxValue) {
+        if (this.marks) {
+            for (let i = 1; i < this.marks.length; ++i) {
+                const leftMark = this.marks[i - 1];
+                const rightMark = this.marks[i];
 
-            this.currentAngle = this._minAngle + (value - this._minValue) * this._angleOnValue;
+                if (value >= leftMark.value && value <= rightMark.value) {
+                    const angleRange = rightMark.angle - leftMark.angle;
+                    const valueRange = rightMark.value - leftMark.value;
+                    const angleOnValue = angleRange / valueRange;
 
-            console.log(this.currentAngle)
+                    this.currentAngle = leftMark.angle + (value - leftMark.value) * angleOnValue;
+                }
+            }
         }
     }
 
-    initialize() {
-        this._initValue = Number(this.initValue);
-        this._minValue = Number(this.minValue);
-        this._maxValue = Number(this.maxValue);
-
-        this._initAngle = Number(this.initAngle);
-        this._minAngle = Number(this.minAngle);
-        this._maxAngle = Number(this.maxAngle);
-
-        const angleRange = Math.abs(this._maxAngle - this._minAngle);
-        const valueRange = Math.abs(this._maxValue - this._minValue);
-        this._angleOnValue = angleRange / valueRange;
-
-        this.currentValue = this._initValue;
-    }
-
     increase() {
-        if (this.currentValue < this._maxValue) {
-            this.currentValue++;
+        if (this.value < this.maxValue) {
+            this.value++;
         }
     }
 
     decrease() {
-        if (this.currentValue > this._minValue) {
-            this.currentValue--;
+        if (this.value > this.minValue) {
+            this.value--;
         }
     }
 }

@@ -1,73 +1,37 @@
 <div class="t121-body">
-    <div class="sidebar">
-        <div class="indicators">
-            <div class="indicator">
-                <label for="friction-error">Поправка на трение:</label>
-                <input type="text" id="friction-error" ng-model="ctrl.frictionErrorValue"/>
-            </div>
-            <div class="indicator">
+    <div t121-sidebar
+         friction-error-positive="ctrl.frictionErrorPositive.value"
+         latitude="ctrl.latitude.value"
+         friction-error-negative="ctrl.frictionErrorNegative.value"
+         balance="ctrl.balance.value"
 
-                <label for="latitude">Установка широты: </label>
-                <input type="text" id="latitude" ng-model="ctrl.latitudeValue"/>
-            </div>
-            <div class="indicator">
-
-                <label for="friction-error2">Поправка на трение 2: </label>
-                <input type="text" id="friction-error2" ng-model="ctrl.frictionError2Value"/>
-            </div>
-            <div class="indicator">
-
-                <label for="balance">Эл. балансир:</label>
-                <input type="text" id="balance" ng-model="ctrl.balanceValue"/>
-            </div>
-        </div>
-        <div class="back-link pull-bottom">
-            <a ui-sref="menu">Вернуться в Меню</a>
-        </div>
-    </div>
+         transformation="ctrl.transformation"
+         heating="ctrl.heating"
+         gyroscope="ctrl.gyroscope"
+         work="ctrl.work"
+         control="ctrl.control"></div>
     <div class="t121-wrapper">
         <div class="t121">
+            <div class="t121-toggles">
+                <div t121-toggle class="transformation" condition="ctrl.transformation"></div>
+                <div t121-toggle class="heating" condition="ctrl.heating"></div>
+                <div t121-toggle class="gyroscope" condition="ctrl.gyroscope"></div>
+                <div t121-toggle class="work" condition="ctrl.work"></div>
+                <div t121-toggle class="control" condition="ctrl.control"></div>
+            </div>
             <div class="t121-knob-controls">
                 <div t121-knob-control class="friction-error-positive"
-                     name="Поправка на трение"
-                     init-value="0"
-                     min-value="0"
-                     max-value="23"
-                     init-angle="0"
-                     min-angle="0"
-                     max-angle="138"
-                     current-value="ctrl.frictionErrorValue">
-                </div>
+                     config="ctrl.frictionErrorPositive.config"
+                     value="ctrl.frictionErrorPositive.value"></div>
                 <div t121-knob-control class="latitude"
-                     name="Установка широты"
-                     init-value="0"
-                     min-value="0"
-                     max-value="60"
-                     init-angle="-135"
-                     min-angle="-135"
-                     max-angle="135"
-                     current-value="ctrl.latitudeValue">
-                </div>
+                     config="ctrl.latitude.config"
+                     value="ctrl.latitude.value"></div>
                 <div t121-knob-control class="friction-error-negative"
-                     name="Поправка на трение"
-                     init-value="0"
-                     min-value="0"
-                     max-value="23"
-                     init-angle="0"
-                     min-angle="0"
-                     max-angle="140"
-                     current-value="ctrl.frictionError2Value">
-                </div>
+                     config="ctrl.frictionErrorNegative.config"
+                     value="ctrl.frictionErrorNegative.value"></div>
                 <div t121-knob-control class="balance"
-                     name="Эл. балансировка"
-                     init-value="0"
-                     min-value="-228"
-                     max-value="228"
-                     init-angle="0"
-                     min-angle="-141"
-                     max-angle="141"
-                     current-value="ctrl.balanceValue">
-                </div>
+                     config="ctrl.balance.config"
+                     value="ctrl.balance.value"></div>
             </div>
         </div>
     </div>

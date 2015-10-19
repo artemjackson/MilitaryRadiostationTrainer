@@ -11,7 +11,7 @@ export default angular.module("app", [
     "ui.router",
     /*  custom   */
     about.name,
-    menu.name,
     mouseClickAndHold.name,
-    t121.name
+    t121.name,
+    menu.name
 ]);

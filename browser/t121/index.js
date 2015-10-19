@@ -1,15 +1,21 @@
 "use strict";
 
 import angular from "angular";
-import knobControl from "./knob-control/index";
-import training from "./training/index";
+
+
 import examination from "./examination/index";
+import training from "./training/index";
+import t121KnobControl from "./knob-control/index";
+import t121Sidebar from "./sidebar/index";
 import T121Controller from "./controller";
+import t121Toggle from "./toggle/index";
 
 export default angular.module("t121", [
-        knobControl.name,
+        examination.name,
         training.name,
-        examination.name
+        t121KnobControl.name,
+        t121Sidebar.name,
+        t121Toggle.name
     ])
     .config($stateProvider => {
         $stateProvider.state("t121", {

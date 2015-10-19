@@ -1,0 +1,46 @@
+.sidebar {
+    float: left;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar ul {
+    margin-bottom: 10%;
+}
+
+.sidebar li {
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.sidebar li p {
+    margin: 0;
+}
+
+.sidebar hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(256, 256, 256, 0), rgba(256, 256, 256, 0.75), rgba(256, 256, 256, 0));
+}
+
+.indicators label {
+    display: block;
+}
+
+.indicator input[type="text"] {
+    display: block;
+    width: 90%;
+
+    padding-left: 5%;
+
+    background: rgba(256, 256, 256, 0.05);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.indicator input[type="text"]:focus {
+    border: 1px solid rgba(256, 256, 256, 0.6);
+    outline: none;
+}
+
+

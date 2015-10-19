@@ -3,29 +3,47 @@
 import angular from "angular";
 
 export default angular.module("mouse-click-and-hold", [])
-    .directive("mouseClickAndHold", ($interval, $parse) => {
+    .directive("mouseClickAndHold", ($interval) => {
         return {
-            link: (scope, element, attrs) => {
+            link: (scope, element) => {
                 const interval = scope.interval;
                 const action = scope.mouseClickAndHold;
 
                 let intervalPromise = null;
 
-                element.on("mousedown", (e) => {
+                bindBeginAction();
+
+                function bindBeginAction(){
+                    element.on("mousedown", beginAction);
+                }
+
+                function bindEndAction(){
+                    element.on("mouseup", endAction);
+                    element.on("mouseleave", endAction);
+                }
+
+                function beginAction(e){
                     e.preventDefault();
                     intervalPromise = $interval(()=> {
-                       action();
+                        action();
                     }, interval);
-                });
+                    bindEndAction();
+                }
 
-                element.on("mouseup", () => {
+                function endAction(){
                     $interval.cancel(intervalPromise);
-                })
+                    unbindEndAction();
+                }
+
+                function unbindEndAction(){
+                    element.off("mouseup");
+                    element.off("mouseleave");
+                }
             },
             restrict: "A",
             scope: {
                 mouseClickAndHold: "&",
-                interval: "@"
+                interval: "="
             }
         }
     });

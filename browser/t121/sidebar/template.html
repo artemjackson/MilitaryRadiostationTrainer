@@ -1,0 +1,46 @@
+<div class="sidebar">
+    <ul class="indicators">
+        <li class="indicator">
+            <label for="friction-error">Поправка на трение:</label>
+            <input type="text" id="friction-error" ng-model="ctrl.frictionErrorPositive"/>
+        </li>
+        <li class="indicator">
+            <label for="latitude">Установка широты: </label>
+            <input type="text" id="latitude" ng-model="ctrl.latitude"/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error2">Поправка на трение 2: </label>
+            <input type="text" id="friction-error2" ng-model="ctrl.frictionErrorNegative"/>
+        </li>
+        <li class="indicator">
+            <label for="balance">Эл. балансир:</label>
+            <input type="text" id="balance" ng-model="ctrl.balance"/>
+        </li>
+    </ul>
+    <hr>
+    <ul class="tumblers">
+        <li>
+            <p>Преобразование:</p>
+            <p>{{ctrl.transformation}}</p>
+        </li>
+        <li>
+            <p>Обогрев:</p>
+            <p> {{ctrl.heating}}</p>
+        </li>
+        <li>
+            <p>Гироскоп:</p>
+            <p>{{ctrl.gyroscope}}</p>
+        </li>
+        <li>
+            <p>Работа:</p>
+            <p> {{ctrl.work}}</p>
+        </li>
+        <li>
+            <p>Контроль:</p>
+            <p> {{ctrl.control}}</p>
+        </li>
+    </ul>
+    <div class="back-link pull-bottom">
+        <a ui-sref="menu">&#10092 Вернуться в Меню</a>
+    </div>
+</div>
