@@ -18,7 +18,7 @@ export default angular.module("t121.sidebar", [])
                 frictionErrorNegative: "=",
                 balance: "=",
 
-                transformation: "=",
+                transformer: "=",
                 heating: "=",
                 gyroscope: "=",
                 work: "=",
