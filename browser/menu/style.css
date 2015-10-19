@@ -37,6 +37,12 @@
     font-size: 45pt;
 }
 
+@media all and (max-width: 1360px){
+    .main-menu-list a, h1, h2 {
+        font-size: 35pt;
+    }
+}
+
 @media all and (max-width: 1024px){
     .main-menu-list a, h1, h2 {
         font-size: 30pt;

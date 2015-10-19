@@ -23,6 +23,15 @@ a:link, a:visited, a:active {
     text-shadow: 5px 5px #323232;
 }
 
+@media all and (max-width: 1360px) {
+    p,
+    h1, h2,
+    label, input[type="text"],
+    a:link, a:visited, a:active {
+        font-size: 18pt;
+    }
+}
+
 @media all and (max-width: 1024px) {
     p,
     h1, h2,
