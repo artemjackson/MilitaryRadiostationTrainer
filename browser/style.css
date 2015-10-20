@@ -20,7 +20,7 @@ a:link, a:visited, a:active {
     color: #eeecf3;
     font: 2.5vh sans-serif;
     text-decoration: none;
-    text-shadow: 3px 3px #323232;
+    text-shadow: 2px 2px #323232;
 }
 
 a:hover {
