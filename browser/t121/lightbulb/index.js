@@ -2,13 +2,13 @@
 
 import angular from "angular";
 
-import T121ToggleCtrl from "./controller";
+import T121LightbulbCtrl from "./controller";
 
-export default angular.module("t121.toggle", [])
-    .directive("t121Toggle", () => {
+export default angular.module("t121.lightbulb", [])
+    .directive("t121Lightbulb", () => {
         return {
             bindToController: true,
-            controller: T121ToggleCtrl,
+            controller: T121LightbulbCtrl,
             controllerAs: 'ctrl',
             replace: true,
             restrict: "A",

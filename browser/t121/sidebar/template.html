@@ -21,23 +21,23 @@
     <ul class="tumblers">
         <li>
             <p>Преобразователь:</p>
-            <p>{{ctrl.transformer}}</p>
+            <p>{{ctrl.transformer ? "ВКЛ" : "ВЫКЛ"}}</p>
         </li>
         <li>
             <p>Обогрев:</p>
-            <p> {{ctrl.heating}}</p>
+            <p> {{ctrl.heating ? "ВКЛ" : "ВЫКЛ"}}</p>
         </li>
         <li>
             <p>Гироскоп:</p>
-            <p>{{ctrl.gyroscope}}</p>
+            <p>{{ctrl.gyroscope ? "ВКЛ" : "ВЫКЛ"}}</p>
         </li>
         <li>
             <p>Работа:</p>
-            <p> {{ctrl.work}}</p>
+            <p> {{ctrl.work ? "ВКЛ" : "ВЫКЛ"}}</p>
         </li>
         <li>
             <p>Контроль:</p>
-            <p> {{ctrl.control}}</p>
+            <p> {{ctrl.control ? "ВКЛ" : "ВЫКЛ"}}</p>
         </li>
     </ul>
     <div class="back-link pull-bottom">

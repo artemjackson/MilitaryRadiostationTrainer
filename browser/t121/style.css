@@ -36,6 +36,28 @@
     left: 12%;
 }
 
+.work-lightbulb {
+    position: absolute;
+    top: 36.2%;
+    left: 11.8%;
+}
+
+.heating-lightbulb {
+    position: absolute;
+    top: 36.2%;
+    left: 23.9%;
+}
+
+.green {
+    background: radial-gradient(circle at 65% 50%, rgba(50, 125, 50, 0.7), rgba(0, 0, 0, 0.3)) !important;
+    box-shadow: 0 0 60px rgba(50, 125, 50, 0.6), 0 0 40px rgba(256, 256, 256, 0.3);
+}
+
+.white {
+    background: radial-gradient(circle at 65% 50%, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.6)) !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(256, 256, 256, 0.3);
+}
+
 .heating {
     position: absolute;
     top: 12%;
