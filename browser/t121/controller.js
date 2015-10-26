@@ -6,39 +6,48 @@ export default class T121Controller {
     constructor($timeout) {
         this.timeout = $timeout;
 
-        this.frictionErrorPositive = {
-            config: config.frictionErrorPositive
+        this.knobControls = {
+            frictionErrorPositive: {
+                config: config.frictionErrorPositive
+            },
+            latitude: {
+                config: config.latitude
+            },
+            frictionErrorNegative: {
+                config: config.frictionErrorNegative
+            },
+            balance: {
+                config: config.balance
+            }
         };
 
-        this.latitude = {
-            config: config.latitude
+        this.toggles = {
+            transformer: {},
+            heating: {},
+            work: {},
+            gyroscope: {},
+            control: {}
         };
-
-        this.frictionErrorNegative = {
-            config: config.frictionErrorNegative
+        this.lightbulbs = {
+            work: {},
+            heating: {}
         };
-
-        this.balance = {
-            config: config.balance
-        };
-
-        this.toggles = [];
-        this.lightbulbs = [];
 
         this.isHeated = false;
+        this.secToBeHeated = 15;
     }
 
     toggleWork() {
-        this.lightbulbs.work = !this.lightbulbs.work;
+        this.lightbulbs.work.isEnabled = !this.lightbulbs.work.isEnabled;
     }
 
     toggleHeating() {
         if (!this.isHeated && !this.timeoutPromise) {
-            this.lightbulbs.heating = !this.lightbulbs.heating;
+            this.toggleHeatingLightbulb();
             this.timeoutPromise = this.timeout(() => {
                 this.disableHeatingLightbulb();
                 this.isHeated = true;
-            }, 7 * 1000);
+            }, this.secToBeHeated * 1000);
         } else {
             this.disableHeatingLightbulb();
             this.timeout.cancel(this.timeoutPromise);
@@ -46,7 +55,11 @@ export default class T121Controller {
         }
     }
 
+    toggleHeatingLightbulb(){
+        this.lightbulbs.heating.isEnabled = !this.lightbulbs.heating.isEnabled;
+    }
+
     disableHeatingLightbulb() {
-        this.lightbulbs.heating = false;
+        this.lightbulbs.heating.isEnabled = false;
     }
 }

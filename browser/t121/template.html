@@ -1,39 +1,45 @@
 <div class="t121-body">
     <div t121-sidebar
-         friction-error-positive="ctrl.frictionErrorPositive.value"
-         latitude="ctrl.latitude.value"
-         friction-error-negative="ctrl.frictionErrorNegative.value"
-         balance="ctrl.balance.value"
-
-         transformer="ctrl.toggles.transformer"
-         heating="ctrl.toggles.heating"
-         gyroscope="ctrl.toggles.gyroscope"
-         work="ctrl.toggles.work"
-         control="ctrl.toggles.control"></div>
+         knob-controls="ctrl.knobControls"
+         toggles="ctrl.toggles">
+    </div>
     <div class="t121-wrapper">
         <div class="t121">
             <div class="t121-toggles">
-                <div t121-toggle class="transformer" is-enabled="ctrl.toggles.transformer"></div>
-                <div t121-toggle class="heating" ng-click="ctrl.toggleHeating()" is-enabled="ctrl.toggles.heating"></div>
-                <div t121-lightbulb class="work-lightbulb green" is-enabled="ctrl.lightbulbs.work"></div>
-                <div t121-lightbulb class="heating-lightbulb white" is-enabled="ctrl.lightbulbs.heating"></div>
-                <div t121-toggle class="gyroscope" is-enabled="ctrl.toggles.gyroscope"></div>
-                <div t121-toggle class="work" ng-click="ctrl.toggleWork()" is-enabled="ctrl.toggles.work"></div>
-                <div t121-toggle class="control" is-enabled="ctrl.toggles.control"></div>
+                <div t121-toggle class="transformer" is-enabled="ctrl.toggles.transformer.isEnabled"
+                     ng-class="{hint : ctrl.toggles.transformer.isHinted}"></div>
+                <div t121-toggle class="heating" ng-click="ctrl.toggleHeating()"
+                     is-enabled="ctrl.toggles.heating.isEnabled"></div>
+
+                <div t121-lightbulb class="work-lightbulb green"
+                     is-enabled="ctrl.lightbulbs.work.isEnabled">
+                </div>
+                <div t121-lightbulb class="heating-lightbulb white"
+                     is-enabled="ctrl.lightbulbs.heating.isEnabled">
+                </div>
+
+                <div t121-toggle class="gyroscope" is-enabled="ctrl.toggles.gyroscope.isEnabled"></div>
+                <div t121-toggle class="work" ng-click="ctrl.toggleWork()"
+                     is-enabled="ctrl.toggles.work.isEnabled"></div>
+                <div t121-toggle class="control" is-enabled="ctrl.toggles.control.isEnabled"></div>
             </div>
             <div class="t121-knob-controls">
                 <div t121-knob-control class="friction-error-positive"
-                     config="ctrl.frictionErrorPositive.config"
-                     value="ctrl.frictionErrorPositive.value"></div>
+                     config="ctrl.knobControls.frictionErrorPositive.config"
+                     value="ctrl.knobControls.frictionErrorPositive.value">
+                </div>
                 <div t121-knob-control class="latitude"
-                     config="ctrl.latitude.config"
-                     value="ctrl.latitude.value"></div>
+                     config="ctrl.knobControls.latitude.config"
+                     value="ctrl.knobControls.latitude.value">
+                </div>
                 <div t121-knob-control class="friction-error-negative"
-                     config="ctrl.frictionErrorNegative.config"
-                     value="ctrl.frictionErrorNegative.value"></div>
+                     config="ctrl.knobControls.frictionErrorNegative.config"
+                     value="ctrl.knobControls.frictionErrorNegative.value">
+                </div>
                 <div t121-knob-control class="balance"
-                     config="ctrl.balance.config"
-                     value="ctrl.balance.value"></div>
+                     config="ctrl.knobControls.balance.config"
+                     value="ctrl.knobControls.balance.value">
+                </div>
             </div>
         </div>
     </div>

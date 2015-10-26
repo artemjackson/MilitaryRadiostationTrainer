@@ -13,16 +13,8 @@ export default angular.module("t121.sidebar", [])
             replace: true,
             restrict: "A",
             scope: {
-                frictionErrorPositive: "=",
-                latitude: "=",
-                frictionErrorNegative: "=",
-                balance: "=",
-
-                transformer: "=",
-                heating: "=",
-                gyroscope: "=",
-                work: "=",
-                control: "="
+                knobControls: "=",
+                toggles: "="
             },
             template: require("./template.html")
         }
