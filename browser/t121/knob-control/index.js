@@ -8,12 +8,11 @@ export default angular.module("t121.knob-control", [])
         return {
             bindToController: true,
             controller: T121KnobControlCtrl,
-            controllerAs: 'ctrl',
+            controllerAs: "ctrl",
             replace: true,
             restrict: "A",
             scope: {
-                config: "=",
-                value: "="
+                model: "="
             },
             template: require("./template.html")
         }

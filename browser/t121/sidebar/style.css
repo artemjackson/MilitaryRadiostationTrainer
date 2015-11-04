@@ -1,7 +1,31 @@
 .sidebar {
-    float: left;
+    position: relative;
     height: 100%;
+    width: 16.5%;
     background: rgba(0, 0, 0, 0.8);
+}
+
+@media all and (min-width: 1400px) {
+    .sidebar {
+        width: 14%;
+    }
+}
+
+.navigation {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.navigation a {
+    font-size: 2.4vh;
+}
+
+.sidebar.left {
+    float: left;
+}
+
+.sidebar.right {
+    float: right;
 }
 
 .sidebar ul {
@@ -24,13 +48,14 @@
     background-image: linear-gradient(to right, rgba(256, 256, 256, 0), rgba(256, 256, 256, 0.75), rgba(256, 256, 256, 0));
 }
 
-.indicators label {
-    display: block;
+.indicator {
+    position: relative;
+    padding-bottom: 1%;
 }
 
 .indicator input[type="text"] {
     display: block;
-    width: 90%;
+    width: 80%;
 
     padding-left: 5%;
 
@@ -44,4 +69,7 @@
     outline: none;
 }
 
-
+.clock {
+    position: absolute;
+    bottom: 0;
+}

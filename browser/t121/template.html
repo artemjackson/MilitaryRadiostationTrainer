@@ -1,48 +1,77 @@
 <div class="t121-body">
-    <div t121-sidebar
-         knob-controls="ctrl.knobControls"
-         toggles="ctrl.toggles">
-    </div>
+    <div t121-left-sidebar></div>
     <div class="t121-wrapper">
+        <div class="topbar" ng-if="ctrl.examiner.isTrainingMode()">
+            <p class="instruction"> {{ctrl.examiner.currentStep.instruction}}</p>
+        </div>
         <div class="t121">
             <div class="t121-toggles">
-                <div t121-toggle class="transformer" is-enabled="ctrl.toggles.transformer.isEnabled"
-                     ng-class="{hint : ctrl.toggles.transformer.isHinted}"></div>
-                <div t121-toggle class="heating" ng-click="ctrl.toggleHeating()"
-                     is-enabled="ctrl.toggles.heating.isEnabled"></div>
-
-                <div t121-lightbulb class="work-lightbulb green"
-                     is-enabled="ctrl.lightbulbs.work.isEnabled">
+                <div t121-toggle class="transformer"
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step5.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step5.0')"
+                     ng-click="ctrl.examiner.nextStepTo('t121-step5.0')"
+                     model="ctrl.t121.toggles.transformer">
                 </div>
-                <div t121-lightbulb class="heating-lightbulb white"
-                     is-enabled="ctrl.lightbulbs.heating.isEnabled">
+                <div t121-toggle class="heating"
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step4.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step4.0')"
+                     ng-click="ctrl.t121.toggleHeating(); ctrl.examiner.nextStepTo('t121-step4.0')"
+                     model="ctrl.t121.toggles.heating">
                 </div>
-
-                <div t121-toggle class="gyroscope" is-enabled="ctrl.toggles.gyroscope.isEnabled"></div>
-                <div t121-toggle class="work" ng-click="ctrl.toggleWork()"
-                     is-enabled="ctrl.toggles.work.isEnabled"></div>
-                <div t121-toggle class="control" is-enabled="ctrl.toggles.control.isEnabled"></div>
+                <div class="t121-lightbulbs">
+                    <div t121-lightbulb class="work-lightbulb green"
+                         model="ctrl.t121.lightbulbs.work">
+                    </div>
+                    <div t121-lightbulb class="heating-lightbulb white"
+                         model="ctrl.t121.lightbulbs.heating">
+                    </div>
+                </div>
+                <div t121-toggle class="gyroscope"
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step8.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step8.0')"
+                     ng-click="ctrl.examiner.nextStepTo('t121-step8.0')"
+                     model="ctrl.t121.toggles.gyroscope">
+                </div>
+                <div t121-toggle class="work"
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step6.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step6.0')"
+                     ng-click="ctrl.t121.toggleWork(); ctrl.examiner.nextStepTo('t121-step6.0')"
+                     model="ctrl.t121.toggles.work">
+                </div>
+                <div t121-toggle class="control"
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step7.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step7.0')"
+                     ng-click="ctrl.examiner.nextStepTo('t121-step7.0')"
+                     model="ctrl.t121.toggles.control">
+                </div>
             </div>
             <div class="t121-knob-controls">
                 <div t121-knob-control class="friction-error-positive"
-                     config="ctrl.knobControls.frictionErrorPositive.config"
-                     value="ctrl.knobControls.frictionErrorPositive.value">
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step2.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step2.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('t121-step2.0')"
+                     model="ctrl.t121.knobControls.frictionErrorPositive">
                 </div>
                 <div t121-knob-control class="latitude"
-                     config="ctrl.knobControls.latitude.config"
-                     value="ctrl.knobControls.latitude.value">
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step1.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step1.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('t121-step1.0')"
+                     model="ctrl.t121.knobControls.latitude">
                 </div>
                 <div t121-knob-control class="friction-error-negative"
-                     config="ctrl.knobControls.frictionErrorNegative.config"
-                     value="ctrl.knobControls.frictionErrorNegative.value">
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step2.1'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step2.1')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('t121-step2.1')"
+                     model="ctrl.t121.knobControls.frictionErrorNegative">
                 </div>
                 <div t121-knob-control class="balance"
-                     config="ctrl.knobControls.balance.config"
-                     value="ctrl.knobControls.balance.value">
+                     ng-class="{hint : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step3.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('t121-step3.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('t121-step3.0')"
+                     model="ctrl.t121.knobControls.balance">
                 </div>
             </div>
         </div>
     </div>
-    <!--<div t121-bottombar>-->
-    <!--</div>-->
+    <div t121-right-sidebar></div>
 </div>

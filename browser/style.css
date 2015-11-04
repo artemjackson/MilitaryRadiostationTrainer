@@ -14,17 +14,27 @@ body {
 }
 
 p,
+li,
 h1, h2,
+pre,
 label, input[type="text"],
-a:link, a:visited, a:active {
-    color: #eeecf3;
-    font: 2.5vh sans-serif;
+a, a:link, a:visited, a:active {
+    color: #e0dee5;
+    font: 2.2vh sans-serif;
     text-decoration: none;
     text-shadow: 2px 2px #323232;
 }
 
+h2 {
+    font-size: 3.8vh !important;
+}
+
+a {
+    cursor: pointer;
+}
+
 a:hover {
-    color: #faf8ff;
+    color: #f7f5fc;
 }
 
 ul {
@@ -37,7 +47,28 @@ ul {
     right: 3%;
 }
 
+.pull-left {
+    position: fixed;
+    left: 0;
+}
+
+.pull-top {
+    position: fixed;
+    top: 3%;
+}
+
 .pull-bottom {
     position: fixed;
     bottom: 3%;
+}
+
+.back-link {
+    position: fixed;
+    bottom: 1%;
+    text-align: center;
+
+}
+
+*:focus {
+    outline: 0;
 }

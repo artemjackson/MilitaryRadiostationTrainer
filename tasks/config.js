@@ -18,10 +18,22 @@ export default {
     },
 
     vendor: {
-        src: [
-            "bower_components/angular/angular.min.js",
-            "bower_components/angular-ui-router/release/angular-ui-router.min.js"
-        ],
-        dest: "vendor.min.js"
+        scripts: {
+            src: [
+                "bower_components/angular/angular.min.js",
+                "bower_components/angular-ui-router/release/angular-ui-router.min.js",
+                "bower_components/moment/min/moment.min.js",
+                "bower_components/angular-animate/angular-animate.min.js",
+                "bower_components/angular-aria/angular-aria.min.js",
+                "bower_components/angular-material/angular-material.min.js"
+            ],
+            dest: "vendor.min.js"
+        },
+        styles: {
+            src: [
+                "bower_components/angular-material/angular-material.min.css"
+            ],
+            dest: "vendor.min.css"
+        }
     }
 }

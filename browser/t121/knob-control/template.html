@@ -1,8 +1,8 @@
 <div class="t121-knob-control-wrapper">
-    <div class="t121-knob-control" style="-webkit-transform: rotate({{ctrl.currentAngle + 'deg'}})">
+    <div class="t121-knob-control" style="-webkit-transform: rotate({{ctrl.model.currentAngle + 'deg'}})">
     </div>
     <div class="t121-knob-control-regulators">
-        <div class="t121-knob-control-regulator" mouse-click-and-hold="ctrl.increase()" interval="ctrl.rotationSpeed">+</div>
-        <div class="t121-knob-control-regulator" mouse-click-and-hold="ctrl.decrease()" interval="ctrl.rotationSpeed">-</div>
+        <div class="t121-knob-control-regulator" mouse-click-and-hold="ctrl.model.increase()" interval="ctrl.model.rotationSpeed">+</div>
+        <div class="t121-knob-control-regulator" mouse-click-and-hold="ctrl.model.decrease()" interval="ctrl.model.rotationSpeed">-</div>
     </div>
 </div>

@@ -13,7 +13,7 @@ export default angular.module("t121.lightbulb", [])
             replace: true,
             restrict: "A",
             scope: {
-                isEnabled: "="
+                model: "="
             },
             template: require("./template.html")
         }
