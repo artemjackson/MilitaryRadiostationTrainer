@@ -1,0 +1,49 @@
+<div class="sidebar right">
+    <ul class="indicators">
+        <li class="indicator">
+            <label for="latitude">Широта:</label>
+            <input type="text" id="latitude" ng-value="ctrl.formularyValues.latitude" disabled/>
+        </li>
+    </ul>
+    <hr>
+    <ul class="indicators">
+        <li><p>Формулярные значения:</p></li>
+        <li class="indicator">
+            <label for="friction-error">Поправка на трение (верхний):</label>
+            <input type="text" id="friction-error" ng-value="ctrl.formularyValues.frictionErrorPositive" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error2">Поправка на трение (нижний): </label>
+            <input type="text" id="friction-error2" ng-value="ctrl.formularyValues.frictionErrorNegative" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="balance">Эл. балансировка:</label>
+            <input type="text" id="balance" ng-value="ctrl.formularyValues.balance" disabled/>
+        </li>
+    </ul>
+    <hr>
+    <ul class="indicators">
+        <li class="indicator">
+            <label for="temperature">Температура:</label>
+            <input type="text" id="temperature" ng-value="ctrl.weather.temperature + '&#8451'" disabled/>
+        </li>
+    </ul>
+    <hr>
+    <ul class="indicators">
+        <li ng-if="!ctrl.t121.toggles.gyroscope.enabledTime" class="indicator">
+            <a ng-mousedown="ctrl.examiner.testAllBefore('t121-step9.0')"
+               ng-class="{'hint reverse' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step9.0'}"
+               ng-mouseup="ctrl.setGyroscopeEnabledTime(); ctrl.examiner.nextStepTo('t121-step9.0')">
+                Зафиксировать время включения тумблера ГИРОСКОП
+            </a>
+        </li>
+        <li ng-if="ctrl.t121.toggles.gyroscope.enabledTime" class="indicator">
+            <label for="gyroscope-enabled-time">Время включения тумблера ГИРОСКОП:</label>
+            <input type="text" id="gyroscope-enabled-time" ng-value="ctrl.t121.toggles.gyroscope.enabledTime" disabled/>
+        </li>
+        <li class="indicator clock">
+            <label for="current-time">Текущее время:</label>
+            <input type="text" id="current-time" ng-model="ctrl.currentTime" disabled/>
+        </li>
+    </ul>
+</div>
