@@ -1,23 +1,15 @@
 "use strict";
 
-import config from "./knobs.config.json";
-
 export default class T121Controller {
-    constructor() {
-        this.frictionErrorPositive = {
-            config: config.frictionErrorPositive
-        };
+    constructor(t121, examiner, mode, resetNeeded) {
+        this.t121 = t121;
+        this.examiner = examiner;
 
-        this.latitude = {
-            config: config.latitude
-        };
+        if (resetNeeded) {
+            this.t121.reset();
+            this.examiner.reset();
+        }
 
-        this.frictionErrorNegative = {
-            config: config.frictionErrorNegative
-        };
-
-        this.balance = {
-            config: config.balance
-        };
+        this.examiner.mode = mode;
     }
 }

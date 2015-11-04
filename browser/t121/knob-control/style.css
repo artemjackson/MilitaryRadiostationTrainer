@@ -22,8 +22,8 @@
 .t121-knob-control-regulators {
     display: none;
     position: absolute;
-    top: 34%;
-    left: 68%;
+    top: 32.6%;
+    left: 65%;
 }
 
 .t121-knob-control-regulator {
@@ -35,5 +35,5 @@
 
     text-align: center;
     color: #272727;
-    font: 150% sans-serif;
+    font: 2.5vh sans-serif;
 }

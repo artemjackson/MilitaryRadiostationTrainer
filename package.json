@@ -41,6 +41,6 @@
   },
   "browserify-shim": {
     "angular": "global:angular",
-    "ipc": "global:ipc"
+    "moment": "global:moment"
   }
 }

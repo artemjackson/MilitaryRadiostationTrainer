@@ -13,7 +13,7 @@ export default angular.module("t121.toggle", [])
             replace: true,
             restrict: "A",
             scope: {
-                condition: "="
+                model: "="
             },
             template: require("./template.html")
         }
