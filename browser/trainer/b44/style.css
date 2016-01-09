@@ -29,6 +29,11 @@
     height: 445px;
 }
 
+.b44.empty {
+    background: url("img/b44/b44-empty.png") no-repeat;
+    background-size: contain;
+}
+
 @media all and (min-width: 1400px) {
     .b44 {
         width: 1120px;

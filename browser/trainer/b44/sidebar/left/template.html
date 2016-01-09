@@ -1,0 +1,57 @@
+<div class="sidebar left">
+    <div class="navigation">
+        <a ng-class="{'hint reverse' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step10.0'}"
+           ng-click="ctrl.examiner.nextStepTo('t121-step10.0')"
+           ui-sref="trainer.b44({mode: ctrl.examiner.mode})">&#10092 Переход к КП</a>
+    </div>
+    <hr>
+    <ul class="indicators">
+        <li class="indicator">
+            <label for="latitude">Установка широты: </label>
+            <input type="text" id="latitude" ng-value="ctrl.t121.knobControls.latitude.value" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error">Поправка на трение (верхний):</label>
+            <input type="text" id="friction-error" ng-value="ctrl.t121.knobControls.frictionErrorPositive.value" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error2">Поправка на трение (нижний): </label>
+            <input type="text" id="friction-error2" ng-value="ctrl.t121.knobControls.frictionErrorNegative.value" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="balance">Эл. балансировка:</label>
+            <input type="text" id="balance" ng-value="ctrl.t121.knobControls.balance.value" disabled/>
+        </li>
+    </ul>
+    <hr>
+    <ul class="tumblers">
+        <li>
+            <p>Преобразователь:</p>
+
+            <p>{{ctrl.t121.toggles.transformer.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Обогрев:</p>
+
+            <p> {{ctrl.t121.toggles.heating.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Гироскоп:</p>
+
+            <p>{{ctrl.t121.toggles.gyroscope.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Работа:</p>
+
+            <p> {{ctrl.t121.toggles.work.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Контроль:</p>
+
+            <p> {{ctrl.t121.toggles.control.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+    </ul>
+    <div class="back-link">
+        <a ui-sref="menu">&#10092 Вернуться в Меню</a>
+    </div>
+</div>

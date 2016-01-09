@@ -2,7 +2,7 @@
 
 import angular from "angular";
 
-import ExaminerService from "./examiner/service";
+import ExaminerService from "../examiner/service";
 import t121KnobControl from "./knob-control/index";
 import t121Lightbulb from "./lightbulb/index";
 import t121LeftSidebar from "./sidebar/left/index";

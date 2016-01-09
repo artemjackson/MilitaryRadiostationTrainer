@@ -1,0 +1,72 @@
+md-dialog.large {
+    width: 700px;
+    max-width: none;
+    max-height: none;
+
+    overflow: hidden;
+    padding-bottom: 2%;
+}
+
+@media all and (min-width: 1441px) {
+    md-dialog.large {
+        width: 1200px !important;
+    }
+}
+
+md-dialog h3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+md-dialog-content.map-content {
+    position: relative !important;
+    overflow: hidden !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.md-toolbar-tools {
+    text-align: center !important;
+    background-color: black !important;
+}
+
+.map {
+    position: relative;
+    display: block;
+    width: 470px;
+    height: 396px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background: url("img/trainer/b44/map/map.jpg") no-repeat center center;
+    background-size: contain;
+}
+
+.b44-sides {
+    position: relative;
+}
+
+.pencil-mark-wrapper {
+    position: absolute;
+}
+
+p.pencil-mark {
+    margin: 0;
+    font-size: 6vh;
+    color: #ff892b;
+}
+
+@media all and (min-width: 1441px) {
+    .map {
+        width: 826px;
+        height: 696px;
+    }
+
+    p.pencil-mark {
+        font-size: 7.4vh;
+    }
+}
+
+
+
+

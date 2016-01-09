@@ -3,7 +3,7 @@
         <a ui-sref="t121({mode : ctrl.examiner.mode})">Переход к ГКУ &#10093</a>
     </div>
     <div class="b44-wrapper">
-        <div class="b44">
+        <div class="b44" ng-class="{empty : !ctrl.b44.isMapSetted}" ng-click="ctrl.b44.setMap()">
         </div>
     </div>
     <div class="back-link pull-left pull-bottom">
