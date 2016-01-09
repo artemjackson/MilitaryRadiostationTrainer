@@ -1,0 +1,22 @@
+<div class="b44-side" ng-class="ctrl.side">
+    <div class="b44-knob-control-wrapper {{ctrl.side}}"
+         ng-class="{'hint-upper-closer': ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'b44-step2.0'}"
+         ng-mousedown="ctrl.examiner.testAllBefore('b44-step2.0')"
+         ng-mouseup="ctrl.examiner.nextStepTo('b44-step2.0')">
+        <div class="b44-knob-control-regulators">
+            <div class="b44-knob-control-regulator" ng-class="ctrl.side" mouse-click-and-hold="ctrl.model.increase()"
+                 interval="ctrl.interval">+
+            </div>
+            <div class="b44-knob-control-regulator" ng-class="ctrl.side" mouse-click-and-hold="ctrl.model.decrease()"
+                 interval="ctrl.interval">-
+            </div>
+        </div>
+    </div>
+    <div class="scale-control"
+         ng-if="ctrl.side === 'left'"
+         ng-class="{'hint-upper': ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'b44-step3.0'}"
+         ng-mousedown="ctrl.examiner.testAllBefore('b44-step3.0')"
+         ng-mouseup="ctrl.examiner.nextStepTo('b44-step3.0')"
+         ng-click="ctrl.b44.switchScale()">
+    </div>
+</div>

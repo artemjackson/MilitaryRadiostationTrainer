@@ -1,0 +1,132 @@
+.md-dialog.md-default-theme, md-dialog {
+    width: 40%;
+    border-radius: 20px !important;
+    background-color: rgba(8, 8, 8, 0.9) !important;
+}
+
+md-backdrop {
+    background: none !important;
+}
+
+h2.md-title {
+    text-align: center;
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+}
+
+span.md-title {
+    font-size: 3vh;
+}
+
+.md-dialog-content .md-dialog-content-body {
+    text-align: center;
+}
+
+.md-actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+button.md-focused {
+    background: transparent !important;
+}
+
+.md-actions button span {
+    font-size: 3vh;
+    color: rgba(247, 245, 252, 0.8);
+}
+
+.hint:before {
+    position: absolute;
+    top: 60%;
+    left: -30%;
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.hint-closer:before {
+    position: absolute;
+    top: 30%;
+    left: -30%;
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.hint-closer-map:before {
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.hint-closest:before {
+    position: absolute;
+    top: 45%;
+    left: -55%;
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.hint-reverse:after {
+    position: absolute;
+    transform: scaleX(-1);
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+
+}
+
+.hint-upper:before {
+    position: absolute;
+    top: -120%;
+    right: -100%;
+    transform: scaleY(-1) scaleX(-1);
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.hint-upper-closer:before {
+    position: absolute;
+    top: -90%;
+    left: -60%;
+    transform: scaleY(-1);
+    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
+    color: rgba(195, 15, 0, 0.8);
+    font-size: 10vh;
+    content: "\279a";
+    z-index: 10;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}

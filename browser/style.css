@@ -15,7 +15,7 @@ body {
 
 p,
 li,
-h1, h2,
+h1, h2, h3,
 pre,
 label, input[type="text"],
 a, a:link, a:visited, a:active {
@@ -27,6 +27,10 @@ a, a:link, a:visited, a:active {
 
 h2 {
     font-size: 3.8vh !important;
+}
+
+h3 {
+    font-size: 3.2vh !important;
 }
 
 a {

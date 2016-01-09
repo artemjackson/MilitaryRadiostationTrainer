@@ -1,0 +1,87 @@
+<div class="b44-body">
+    <div b44-left-sidebar></div>
+    <div class="b44-wrapper">
+        <div class="topbar" ng-if="ctrl.examiner.isTrainingMode()">
+            <p class="instruction"> {{ctrl.examiner.currentStep.instruction}}</p>
+        </div>
+        <div class="b44" ng-class="{empty : !ctrl.b44.isMapSetted,'right-opened': ctrl.b44.buttonsHandlers.x.isOpened,
+        'left-opened': ctrl.b44.buttonsHandlers.y.isOpened, 'center-opened': ctrl.b44.buttonsHandlers.path.isOpened}">
+            <a class="go-to left-side"
+               ng-class="{'hint-closer' : ctrl.examiner.isTrainingMode() && (ctrl.examiner.currentStep.id === 'b44-step15.0' || ctrl.examiner.currentStep.id === 'b44-step16.0')}"
+               ng-click="ctrl.showLeftSide()">
+                Вид сбоку слева
+            </a>
+            <a class="go-to top-side"
+               ng-class="{'hint-closer' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'b44-step14.0'}"
+               ng-click="ctrl.showTopSide()">
+                Вид сверху
+            </a>
+            <div class="map-rollover"
+                 ng-class="{'hint-closer-map': ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'b44-step1.0' || ctrl.examiner.currentStep.id === 'b44-step2.0'}"
+                 ng-mousedown="ctrl.examiner.testAllBefore('b44-step1.0')"
+                 ng-click="ctrl.b44.isMapSetted ? ctrl.showMap() : ctrl.b44.setMap()"
+                 ng-mouseup="ctrl.examiner.nextStepTo('b44-step1.0')">
+            </div>
+            <div class="b44-buttons-handlers">
+                <div class="b44-buttons-handler left"
+                     b44-buttons-handler
+                     model="ctrl.b44.buttonsHandlers.y"
+                     property="y"
+                     ng-class="{'hint-closer': ctrl.examiner.isTrainingMode() && (ctrl.examiner.currentStep.id === 'b44-step5.0' || ctrl.examiner.currentStep.id === 'b44-step7.0' || ctrl.examiner.currentStep.id === 'b44-step8.0')}"
+                     ng-mousedown="ctrl.b44.buttonsHandlers.y.isOpened ? ctrl.examiner.testAllBefore('b44-step7.0') : ctrl.examiner.testAllBefore('b44-step5.0')"
+                     ng-click="ctrl.examiner.nextStepTo('b44-step5.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('b44-step7.0'); ctrl.examiner.nextStepTo('b44-step8.0')">
+                </div>
+                <div class="b44-buttons-handler center"
+                     b44-buttons-handler
+                     model="ctrl.b44.buttonsHandlers.path"
+                     property="path"
+                     ng-class="{'hint-closer': ctrl.examiner.isTrainingMode() && (ctrl.examiner.currentStep.id === 'b44-step10.0' || ctrl.examiner.currentStep.id === 'b44-step11.0' || ctrl.examiner.currentStep.id === 'b44-step12.0')}"
+                     ng-mousedown="ctrl.b44.buttonsHandlers.x.isOpened ? ctrl.examiner.testAllBefore('b44-step11.0') : ctrl.examiner.testAllBefore('b44-step10.0')"
+                     ng-click="ctrl.examiner.nextStepTo('b44-step10.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('b44-step11.0'); ctrl.examiner.nextStepTo('b44-step12.0')">
+                </div>
+                <div class="b44-buttons-handler right"
+                     b44-buttons-handler
+                     model="ctrl.b44.buttonsHandlers.x"
+                     property="x"
+                     ng-class="{'hint-closer': ctrl.examiner.isTrainingMode() && (ctrl.examiner.currentStep.id === 'b44-step4.0' || ctrl.examiner.currentStep.id === 'b44-step6.0' || ctrl.examiner.currentStep.id === 'b44-step9.0')}"
+                     ng-mousedown="ctrl.b44.buttonsHandlers.x.isOpened ? ctrl.examiner.testAllBefore('b44-step6.0') : ctrl.examiner.testAllBefore('b44-step4.0')"
+                     ng-click="ctrl.examiner.nextStepTo('b44-step4.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('b44-step6.0'); ctrl.examiner.nextStepTo('b44-step9.0')">
+                </div>
+            </div>
+            <div class="b44-scale-lightbulb" ng-class="{active: ctrl.b44.scale === 'ВЫКЛ'}">
+            </div>
+            <div class="b44-front-knob-controls">
+                <div class="b44-knob-control-wrapper front-left"
+                     ng-class="{'hint-upper-closer': ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'b44-step13.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('b44-step13.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('b44-step13.0')">
+                    <div class="b44-knob-control-regulators">
+                        <div class="b44-knob-control-regulator" mouse-click-and-hold="ctrl.increaseX()"
+                             interval="ctrl.interval">+
+                        </div>
+                        <div class="b44-knob-control-regulator" mouse-click-and-hold="ctrl.decreaseX()"
+                             interval="ctrl.interval">-
+                        </div>
+                    </div>
+                </div>
+                <div class="b44-knob-control-wrapper front-right"
+                     ng-class="{'hint-upper-closer': ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'b44-step13.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('b44-step13.0')"
+                     ng-mouseup="ctrl.examiner.nextStepTo('b44-step13.0')">
+                    <div class="b44-knob-control-regulators">
+                        <div class="b44-knob-control-regulator" mouse-click-and-hold="ctrl.increaseY()"
+                             interval="ctrl.interval">+
+                        </div>
+                        <div class="b44-knob-control-regulator" mouse-click-and-hold="ctrl.decreaseY()"
+                             interval="ctrl.interval">-
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div b44-right-sidebar></div>
+</div>
