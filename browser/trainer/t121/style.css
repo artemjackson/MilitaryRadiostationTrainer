@@ -15,7 +15,7 @@
     background: rgba(0, 0, 0, 0.8);
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1441px) {
     .t121-wrapper {
         width: 72%;
     }
@@ -42,13 +42,13 @@
     right: 0;
     margin: auto;
     position: absolute;
-    background: url("img/t121/t121.png") no-repeat;
+    background: url("img/trainer/t121/t121.png") no-repeat;
     background-size: contain;
     width: 700px;
     height: 445px;
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1441px) {
     .t121 {
         width: 1120px;
         height: 710px;
@@ -115,7 +115,7 @@
 
 .latitude {
     position: absolute;
-    top: 8.6%;
+    top: 9%;
     left: 72%;
 }
 
@@ -129,34 +129,4 @@
     position: absolute;
     top: 43.1%;
     left: 72.3%;
-}
-
-.hint:before {
-    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
-    color: rgba(195, 15, 0, 0.8);
-    font-size: 10vh;
-    content: "\279a";
-    z-index: 10;
-    animation: blink 1s steps(2, start) infinite;
-}
-
-.hint.reverse:before {
-    all: initial;
-}
-
-.hint.reverse:after {
-    position: absolute;
-    text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
-    color: rgba(195, 15, 0, 0.8);
-    font-size: 10vh;
-    content: "\279a";
-    z-index: 10;
-    animation: blink 1s steps(2, start) infinite;
-    transform: scaleX(-1);
-}
-
-@keyframes blink {
-    to {
-        visibility: hidden;
-    }
 }

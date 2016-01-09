@@ -1,3 +1,7 @@
-/**
- * Created by jackson on 11/8/15.
- */
+"use strict";
+
+import angular from "angular";
+import Map from "./service";
+
+export default angular.module("map", [])
+    .service("map", Map);

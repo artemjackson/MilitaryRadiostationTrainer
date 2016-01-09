@@ -1,7 +1,7 @@
 "use strict";
 
 import angular from "angular";
-import Map from "./service";
+import TopSide from "./service";
 
-export default angular.module("map", [])
-    .service("map", Map);
+export default angular.module("b44.topSide", [])
+    .service("topSide", TopSide);

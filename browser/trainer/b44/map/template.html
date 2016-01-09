@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<md-dialog aria-label="Установка карандаша" class="md-transition-in large" role="dialog" tabindex="-1"
+           aria-describedby="dialog_11" style="">
+    <form class="ng-pristine ng-valid">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>Установка карандаша</h3>
+                <span class="flex"></span>
+                <button class="md-icon-button md-button md-ink-ripple" type="button" ng-transclude=""
+                        ng-click="ctrl.close()">
+                    <md-icon md-svg-src="img/trainer/b44/map/ic_close_24px.svg" aria-label="Close dialog"
+                             class="ng-scope ng-isolate-scope" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fit=""
+                             preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                        </svg>
+                    </md-icon>
+                </button>
+            </div>
+        </md-toolbar>
 
-</body>
-</html>
+        <md-dialog-content class="map-content" style="max-width:800px;max-height:810px; " id="dialog_11">
+            <div class="map">
+                <div class="pencil-mark-wrapper"
+                     style="bottom: {{ctrl.b44.pencil.x.inPercents() + '%'}}; left: {{ctrl.b44.pencil.y.inPercents() + '%'}}">
+                    <p class="pencil-mark">&#x271B</p>
+                </div>
+            </div>
+            <div b44-side side="left" model="ctrl.b44.pencil.y"></div>
+            <div b44-side side="right" model="ctrl.b44.pencil.x"></div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

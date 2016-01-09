@@ -1,8 +1,8 @@
 "use strict";
 
 export default class T121LeftSidebarCtrl {
-    constructor(t121, examiner) {
-        this.t121 = t121;
+    constructor(b44, examiner) {
+        this.b44 = b44;
         this.examiner = examiner;
     }
 }

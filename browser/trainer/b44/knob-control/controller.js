@@ -1,5 +1,5 @@
 "use strict";
 
-export default class T121KnobControlCtrl {
+export default class B44KnobControlCtrl {
 
 }

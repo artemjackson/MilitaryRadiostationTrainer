@@ -4,8 +4,8 @@ import angular from "angular";
 
 import T121SidebarCtrl from "./controller";
 
-export default angular.module("t121.right-sidebar", [])
-    .directive("t121RightSidebar", () => {
+export default angular.module("b44.right-sidebar", [])
+    .directive("b44RightSidebar", () => {
         return {
             bindToController: true,
             controller: T121SidebarCtrl,

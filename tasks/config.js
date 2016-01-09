@@ -17,6 +17,15 @@ export default {
         dest: "style.min.css"
     },
 
+    images: {
+        src: [
+            "browser/**/*.png",
+            "browser/**/*.jpg",
+            "browser/**/*.svg"
+        ],
+        dest: "img/"
+    },
+
     vendor: {
         scripts: {
             src: [

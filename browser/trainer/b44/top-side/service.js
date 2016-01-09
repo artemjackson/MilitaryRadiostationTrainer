@@ -1,8 +1,8 @@
 "use strict";
 
-import MapController from "./controller";
+import topSideCtrl from "./controller";
 
-export default class MapService {
+export default class topSideService {
     constructor($mdDialog) {
         this.dialog = $mdDialog;
     }
@@ -12,7 +12,7 @@ export default class MapService {
             targetEvent: $event,
             clickOutsideToClose: true,
             template: require('./template.html'),
-            controller: MapController,
+            controller: topSideCtrl,
             controllerAs: 'ctrl'
         });
     }

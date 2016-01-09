@@ -7,10 +7,11 @@ import Lightbulb from "./lighbulb";
 import Toggle from "./toggle";
 
 export default class T121Service {
-    constructor($timeout, $interval, weather) {
+    constructor($timeout, $interval, weather, $mdDialog) {
         this.timeout = $timeout;
         this.interval = $interval;
         this.weather = weather;
+        this.dialog = $mdDialog;
 
         this.reset();
     }
@@ -20,9 +21,9 @@ export default class T121Service {
 
         this.formularyValues = {
             latitude: String(this.randomInRange(52, 54)),
-            frictionErrorPositive: String(this.randomInRange(5, 15)),
-            frictionErrorNegative: String(this.randomInRange(-5, -15)),
-            balance: String(this.randomInRange(-120, 120))
+            frictionErrorPositive: String(this.randomInRange(1, 10)),
+            frictionErrorNegative: String(this.randomInRange(-1, -10)),
+            balance: String(this.randomInRange(-40, 40))
         };
 
         this.knobControls = {
@@ -60,6 +61,7 @@ export default class T121Service {
             this.heatingTimeoutPromise = this.timeout(() => {
                 this.disableHeatingLightbulb();
                 this.setAsHeated();
+                this.showModalDialog();
             }, this.secToBeHeated * 1000);
         } else {
             this.disableHeatingLightbulb();
@@ -83,6 +85,19 @@ export default class T121Service {
     invalidateTimeoutPromise() {
         this.timeout.cancel(this.heatingTimeoutPromise);
         this.heatingTimeoutPromise = null;
+    }
+
+    showModalDialog() {
+        let alert = this.dialog.alert()
+            .title("ГКУ 1Т121")
+            .content("Обогрев ГКУ 1T121 окончен! \n Необходимо отключить тумблер обогрева!")
+            .ok('Закрыть');
+
+        this.dialog
+            .show(alert)
+            .finally(function () {
+                alert = undefined;
+            });
     }
 
     randomInRange(min, max) {

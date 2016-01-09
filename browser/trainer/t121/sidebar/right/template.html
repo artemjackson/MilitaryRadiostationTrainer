@@ -32,7 +32,7 @@
     <ul class="indicators">
         <li ng-if="!ctrl.t121.toggles.gyroscope.enabledTime" class="indicator">
             <a ng-mousedown="ctrl.examiner.testAllBefore('t121-step9.0')"
-               ng-class="{'hint reverse' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step9.0'}"
+               ng-class="{'hint-reverse' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 't121-step9.0'}"
                ng-mouseup="ctrl.setGyroscopeEnabledTime(); ctrl.examiner.nextStepTo('t121-step9.0')">
                 Зафиксировать время включения тумблера ГИРОСКОП
             </a>

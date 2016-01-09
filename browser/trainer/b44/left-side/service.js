@@ -1,8 +1,8 @@
 "use strict";
 
-import topSideCtrl from "./controller";
+import leftSideCtrl from "./controller";
 
-export default class topSideService {
+export default class LeftSideService {
     constructor($mdDialog) {
         this.dialog = $mdDialog;
     }
@@ -12,7 +12,7 @@ export default class topSideService {
             targetEvent: $event,
             clickOutsideToClose: true,
             template: require('./template.html'),
-            controller: topSideCtrl,
+            controller: leftSideCtrl,
             controllerAs: 'ctrl'
         });
     }

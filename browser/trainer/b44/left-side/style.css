@@ -13,7 +13,7 @@ md-dialog.large {
     }
 }
 
-md-dialog-content.top-side-content {
+md-dialog-content.left-side-content {
     position: relative !important;
     overflow: hidden !important;
     max-width: none !important;
@@ -31,32 +31,37 @@ md-dialog h3 {
     background-color: black !important;
 }
 
-div.top-side {
+div.left-side {
     position: relative;
     display: block;
     width: 470px;
     height: 396px;
     margin: 0 auto;
     border-radius: 5px;
-    background: url("img/trainer/b44/top-side/top-side.png") no-repeat center center;
+    background: url("img/trainer/b44/left-side/left-side.png") no-repeat center center;
     background-size: contain;
 }
 
 @media all and (min-width: 1441px) {
-    div.top-side {
+    div.left-side {
         width: 826px;
         height: 696px;
     }
 }
 
-.b44-top-side-knob-control {
+.b44-left-side-knob-control {
     position: absolute;
-    top: 6.5%;
-    left: 42.5%;
-    width: 13%;
-    height: 15%;
+    bottom: 11%;
+    left: 19%;
+    width: 14%;
+    height: 16%;
 }
 
+.b44-path-knob {
+    position: absolute;
+    bottom: 19.5%;
+    left: 5.5%;
 
-
-
+    width: 15%;
+    height: 18%;
+}

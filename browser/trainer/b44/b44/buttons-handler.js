@@ -1,6 +1,6 @@
 "use strict";
 
-export default class B44ButtonHandler {
+export default class B44ButtonsHandler {
     constructor(){
         this.isOpened = false;
     }

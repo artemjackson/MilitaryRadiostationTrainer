@@ -13,17 +13,17 @@ md-dialog.large {
     }
 }
 
-md-dialog h3 {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-md-dialog-content.map-content {
+md-dialog-content.top-side-content {
     position: relative !important;
     overflow: hidden !important;
     max-width: none !important;
     max-height: none !important;
+}
+
+md-dialog h3 {
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .md-toolbar-tools {
@@ -31,40 +31,30 @@ md-dialog-content.map-content {
     background-color: black !important;
 }
 
-.map {
+div.top-side {
     position: relative;
     display: block;
     width: 470px;
     height: 396px;
     margin: 0 auto;
     border-radius: 5px;
-    background: url("img/trainer/b44/map/map.jpg") no-repeat center center;
+    background: url("img/trainer/b44/top-side/top-side.png") no-repeat center center;
     background-size: contain;
 }
 
-.b44-sides {
-    position: relative;
-}
-
-.pencil-mark-wrapper {
-    position: absolute;
-}
-
-p.pencil-mark {
-    margin: 0;
-    font-size: 6vh;
-    color: #ff892b;
-}
-
 @media all and (min-width: 1441px) {
-    .map {
+    div.top-side {
         width: 826px;
         height: 696px;
     }
+}
 
-    p.pencil-mark {
-        font-size: 7.4vh;
-    }
+.b44-top-side-knob-control {
+    position: absolute;
+    top: 6.5%;
+    left: 42.5%;
+    width: 13%;
+    height: 15%;
 }
 
 

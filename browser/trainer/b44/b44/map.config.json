@@ -1,0 +1,22 @@
+{
+  "x": {
+    "minPercent": 3.3,
+    "maxPercent": 93,
+    "minValue": 56400,
+    "maxValue": 61000
+  },
+  "y": {
+    "minPercent": 4.5,
+    "maxPercent": 96,
+    "minValue": 50525,
+    "maxValue": 55975
+  },
+  "initX": {
+    "minValue": 58000,
+    "maxValue": 61000
+  },
+  "initY": {
+    "minValue": 52000,
+    "maxValue": 55000
+  }
+}

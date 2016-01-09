@@ -3,25 +3,28 @@
 import angular from "angular";
 
 import B44Controller from "./controller";
-import B44Service from "./b44/service";
-import ExaminerService from "../examiner/service";
+import b44ButtonsHandler from "./buttons-handler/index";
+import b44LeftSidebar from "./sidebar/left/index";
+import b44RightSidebar from "./sidebar/right/index";
+import b44Side from "./side/index.js"
+import map from "./map/index";
+import topSide from "./top-side/index";
+import leftSide from "./left-side/index";
 
-export default angular.module("b44", [])
-    .service('b44', B44Service)
-    .service('examiner', ExaminerService)
+export default angular.module("trainer.b44", [
+        b44ButtonsHandler.name,
+        b44LeftSidebar.name,
+        b44RightSidebar.name,
+        b44Side.name,
+        map.name,
+        leftSide.name,
+        topSide.name
+    ])
     .config($stateProvider => {
-        $stateProvider.state("b44", {
+        $stateProvider.state("trainer.b44", {
             controller: B44Controller,
             controllerAs: "ctrl",
-            params: {
-                mode: 'training'
-            },
-            resolve: {
-                mode: $stateParams => {
-                    return $stateParams.mode;
-                }
-            },
             template: require("./template.html"),
-            url: "/b44/:mode"
+            url: "/b44"
         });
     });
