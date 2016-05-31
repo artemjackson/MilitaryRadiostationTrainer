@@ -1,0 +1,11 @@
+<div class="knob-control-wrapper" style="-webkit-transform: rotate({{ctrl.model.currentAngle + 'deg'}})">
+    <div class="knob-control">
+        <reel-screw id="first" model="ctrl.model.screw1"
+        ng-class="{'hint-upper-closer' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step7.1' || ctrl.examiner.currentStep.id === 'radiostation-step7.3'}"
+        ng-mousedown="ctrl.examiner.currentStep.id === 'radiostation-step7.1' ? ctrl.examiner.testAllBefore('radiostation-step7.1') : ctrl.examiner.testAllBefore('radiostation-step7.3')"
+        ng-click="ctrl.examiner.currentStep.id === 'radiostation-step7.1' ? ctrl.examiner.nextStepTo('radiostation-step7.1') : ctrl.examiner.nextStepTo('radiostation-step7.3')"></reel-screw>
+        <reel-screw id="second" model="ctrl.model.screw2"></reel-screw>
+        <reel-screw id="third" model="ctrl.model.screw3"></reel-screw>
+        <reel-screw id="forth" model="ctrl.model.screw4"></reel-screw>
+    </div>
+</div>

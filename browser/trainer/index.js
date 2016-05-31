@@ -3,21 +3,15 @@
 import angular from "angular";
 
 import ExaminerService from "../examiner/service";
-import b44 from "./b44/index";
-import B44Service from "./b44/b44/service";
-import t121 from "./t121/index";
-import T121Service from "./t121/t121/service";
+import radiostation from "./radiostation/index";
+import radiostationService from "./radiostation/radiostation/service";
 import TrainerCtrl from "./controller";
-import WeatherService from "./weather/service";
 
-export default angular.module("t121", [
-        t121.name,
-        b44.name
+export default angular.module("radiostation", [
+        radiostation.name,
     ])
     .service('examiner', ExaminerService)
-    .service('t121', T121Service)
-    .service('b44', B44Service)
-    .service('weather', WeatherService)
+    .service('radiostation', radiostationService)
     .config($stateProvider => {
         $stateProvider.state("trainer", {
             abstract: true,

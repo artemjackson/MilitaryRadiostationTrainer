@@ -1,0 +1,109 @@
+<div class="radiostation-body">
+    <div left-sidebar></div>
+    <div class="radiostation-wrapper">
+        <div class="topbar" ng-if="ctrl.examiner.isTrainingMode()">
+            <p class="instruction"> {{ctrl.examiner.currentStep.instruction}}</p>
+        </div>
+        <div class="radiostation" ng-class="ctrl.radiostation.lock.isOpened ? 'opened' : 'closed' ">
+            <radiostation-ptt model="ctrl.radiostation.ptt">
+            </radiostation-ptt>
+            <radiostation-lightbulb
+                desired="ctrl.radiostation.desiredAntenna"
+                actual="ctrl.radiostation.knobControls.antennaTuner.value"
+                enabled="ctrl.radiostation.ptt.isEnabled">
+            </radiostation-lightbulb>
+            <radiostation-ptt-click-area model="ctrl.radiostation.ptt"
+                ng-class="{'hint-closest' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step8.0'}"
+            ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step8.0')"
+            ng-click="ctrl.examiner.nextStepTo('radiostation-step8.0')"
+            ></radiostation-ptt-click-area>
+            <radiostation-frequency-scale model="ctrl.radiostation.knobControls.frequency"
+                ng-class="ctrl.radiostation.toggles.scale.isEnabled ? 'active' : 'inactive'">
+                </radiostation-frequency-scale>
+            <div class="radiostation-knob-controls">
+                <radiostation-frequency-knob-control model="ctrl.radiostation.knobControls.frequency"
+                ng-class="{'hint-closest' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step7.2'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step7.2')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step7.2')">
+                </radiostation-frequency-knob-control>
+                <radiostation-noise-knob-control model="ctrl.radiostation.knobControls.noise"
+                ng-class="{'hint-closer' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step4.1'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step4.1')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step4.1')">
+                </radiostation-noise-knob-control>
+                <radiostation-voltage-knob-control model="ctrl.radiostation.knobControls.voltage"
+                ng-class="{'hint-closer' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step3.0'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step3.0')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step3.0')">
+                </radiostation-voltage-knob-control>
+                <radiostation-corrector-knob-control model="ctrl.radiostation.knobControls.corrector"
+                ng-class="{'hint-closer' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step3.1'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step3.1')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step3.1')">
+                </radiostation-corrector-knob-control>
+                <radiostation-volume-knob-control model="ctrl.radiostation.knobControls.volume"
+                ng-class="{'hint-closer' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step4.0'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step4.0')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step4.0')">
+                </radiostation-volume-knob-control>
+                <radiostation-fixed-frequencies-knob-control model="ctrl.radiostation.knobControls.fixedFrequencies"
+                before-change="ctrl.radiostation.saveFixedFrequency(id)"
+                after-change="ctrl.radiostation.setFixedFrequency(id)"
+                ng-class="{'hint-closest' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step5.0'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step5.0')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step5.0')">
+                </radiostation-fixed-frequencies-knob-control>
+                <radiostation-antenna-tuner-knob-control model="ctrl.radiostation.knobControls.antennaTuner"
+                ng-class="{'hint-closest' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step9.0'}"
+                ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step9.0')"
+                ng-click="ctrl.examiner.nextStepTo('radiostation-step9.0')">
+                </radiostation-antenna-tuner-knob-control>
+            </div>
+            <div class="radiostation-toggles">
+                <radiostation-toggle class="scale"
+                     ng-class="{'hint' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step2.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step2.0')"
+                     ng-click="ctrl.examiner.nextStepTo('radiostation-step2.0')"
+                     model="ctrl.radiostation.toggles.scale">
+                </radiostation-toggle>
+                <radiostation-toggle class="tone"></radiostation-toggle>
+                <radiostation-toggle class="power"
+                     ng-class="{'hint' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step1.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step1.0')"
+                     ng-click="ctrl.examiner.nextStepTo('radiostation-step1.0')"
+                     model="ctrl.radiostation.toggles.power">
+                </radiostation-toggle>
+            </div>
+            <div>
+                <div class="radiostation-frequency-lights">
+                    <div id="first" class="frequency-light" ng-class="{active : ctrl.radiostation.knobControls.fixedFrequencies.value === 0}">1</div>
+                    <div id="second" class="frequency-light" ng-class="{active : ctrl.radiostation.knobControls.fixedFrequencies.value === 1}">2</div>
+                    <div id="third" class="frequency-light" ng-class="{active : ctrl.radiostation.knobControls.fixedFrequencies.value === 2}">3</div>
+                    <div id="forth" class="frequency-light" ng-class="{active : ctrl.radiostation.knobControls.fixedFrequencies.value === 3}">4</div>
+                </div>
+                <div class="radiostation-frequency-toggles">
+                    <radiostation-toggle class="frequency1range1"
+                     ng-class="{'hint' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step6.0'}"
+                     ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step6.0')"
+                     ng-click="ctrl.examiner.nextStepTo('radiostation-step6.0')"
+                     model="ctrl.radiostation.toggles.frequency1range1">
+                    </radiostation-toggle>
+                    <radiostation-toggle class="frequency2range1" model="ctrl.radiostation.toggles.frequency2range1"></radiostation-toggle>
+                    <radiostation-toggle class="frequency3range1" model="ctrl.radiostation.toggles.frequency3range1"></radiostation-toggle>
+                    <radiostation-toggle class="frequency4range1" model="ctrl.radiostation.toggles.frequency4range1"></radiostation-toggle>
+                </div>
+            </div>
+            <div class="radiostation-frequency-range-lights">
+                <div id="first" class="frequency-range-light" ng-class="{active : ctrl.radiostation.currentFrequencyRange === 1}">&#8544;</div>
+                <div id="second" class="frequency-range-light" ng-class="{active : ctrl.radiostation.currentFrequencyRange === 2}">&#8545;</div>
+            </div>
+            <radiostation-power-scale model="(ctrl.radiostation.toggles.power.isEnabled && ctrl.radiostation.knobControls.voltage.alias === 'БС') || (ctrl.radiostation.ptt.isEnabled && ctrl.antennaTunerIsOk)">
+            </radiostation-power-scale>
+            <radiostation-lock lock="ctrl.radiostation.lock" reel="ctrl.radiostation.reel"
+            ng-class="{'hint-closest' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step7.0'}"
+            ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step7.0')"
+            ng-click="ctrl.examiner.nextStepTo('radiostation-step7.0')"></radiostation-lock>
+        </div>
+    </div>
+    <div right-sidebar></div>
+</div>

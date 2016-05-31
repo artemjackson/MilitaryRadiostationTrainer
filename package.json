@@ -8,7 +8,7 @@
     "gulp": "gulp default",
     "app": "npm run gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "win-pack": "electron-packager build/ NavEquipTrainer --platform=win32 --arch=all --version=0.33.3 --overwrite",
+    "win-pack": "electron-packager build/ RadiostationTrainer --platform=win32 --arch=all --version=0.33.3 --overwrite",
 	"ales": "electron-packager SldrTrainer/ SldrTrainer --platform=win32 --arch=ia32 --version=0.33.3 --overwrite"
   },
   "author": "Artsiom Stsepanishchau",

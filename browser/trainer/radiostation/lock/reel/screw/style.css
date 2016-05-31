@@ -1,0 +1,11 @@
+reel-screw {
+    width: 17%;
+    height: 21%;
+}
+reel-screw .knob-control-wrapper {
+    -webkit-transition: .3s ease-in-out; 
+}
+reel-screw .knob-control {
+    background: url("img/trainer/radiostation/lock/reel/screw/screw.png") center center no-repeat;
+    background-size: contain;
+}

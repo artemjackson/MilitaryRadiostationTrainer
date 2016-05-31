@@ -1,0 +1,32 @@
+radiostation-reel {
+    width: 125%;
+    height: 125%;
+}
+
+radiostation-reel .knob-control {
+    background: url("img/trainer/radiostation/lock/reel/reel.png") center center no-repeat;
+    background-size: contain;
+}
+radiostation-reel > .knob-control-wrapper:hover  {
+    box-shadow: none;
+}
+reel-screw#forth{
+    position: absolute;
+    top: 17%;
+    left: 16%;
+}
+reel-screw#first{
+    position: absolute;
+    top: 8%;
+    right: 24%;;
+}
+reel-screw#second{
+    position: absolute;
+    bottom: 11%;
+    left: 24%;
+}
+reel-screw#third{
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+}

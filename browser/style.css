@@ -11,7 +11,13 @@ body {
 
     -webkit-user-select: none;
     cursor: default;
+    z-index: -100;
 }
+
+@font-face {
+    font-family: Fractions;
+    src: url(fonts/KGTraditionalFractions.ttf);
+ }
 
 p,
 li,

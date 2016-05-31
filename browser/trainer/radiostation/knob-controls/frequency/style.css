@@ -1,0 +1,8 @@
+radiostation-frequency-knob-control {
+    width: 8%;
+    height: 13%
+}
+radiostation-frequency-knob-control .knob-control {
+    background: url("img/trainer/radiostation/knob-controls/frequency/knob.png") center center no-repeat;
+    background-size: contain;
+}

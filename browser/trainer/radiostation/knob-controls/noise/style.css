@@ -1,0 +1,13 @@
+radiostation-noise-knob-control {
+    width: 8.3%;
+    height: 8.2%
+}
+radiostation-noise-knob-control .knob-control {
+    background: url("img/trainer/radiostation/knob-controls/noise/knob.png") center center no-repeat;
+    background-size: contain;
+}
+
+radiostation-noise-knob-control .knob-control-regulators {
+    top: 9%;
+    right: 17%;
+}

@@ -1,12 +1,10 @@
 "use strict";
 
 export default class ExaminerService {
-    constructor(t121, b44, $mdDialog, $timeout) {
-        this.t121 = t121;
-        this.b44 = b44;
+    constructor(radiostation, $mdDialog, $timeout) {
+        this.radiostation = radiostation;
         this.dialog = $mdDialog;
         this.timeout = $timeout;
-        const self = this;
 
         this.reset();
     }
@@ -16,222 +14,118 @@ export default class ExaminerService {
         this.errorsNumber = 0;
         this.steps = [
             {
-                id: "t121-step1.0",
-                instruction: "На ПУ ГКУ потецниометром УСТАНОВКА ШИРОТЫ установить значение широты точки стояния, взятое с карты.",
+                id: "radiostation-step1.0",
+                instruction: "Тумблер ПИТАНИЕ перевести в верхнее положение ВКЛ.",
                 test () {
-                    return this.knobControls.latitude.value === this.formularyValues.latitude
+                    return this.toggles.power.isEnabled;
                 }
             },
             {
-                id: "t121-step2.0",
-                instruction: "Проверить установку формулярных значений потенциометра ПОПРАВКА НА ТРЕНИЕ(верхний), при необходимости выставить их значения.",
+                id: "radiostation-step2.0",
+                instruction: "Тумблером ШКАЛА включить освещение оптической шкалы.",
+                test () {
+                    return this.toggles.scale.isEnabled;
+                }
+            },
+            {
+                id: "radiostation-step3.0",
+                instruction: "Переключатель контроль напряжений поставить в положение РАБОТА 1.",
                 test ()  {
-                    return this.knobControls.frictionErrorPositive.value === this.formularyValues.frictionErrorPositive
+                    return this.knobControls.voltage.alias === "РАБОТА 1";
                 }
             },
             {
-                id: "t121-step2.1",
-                instruction: "Проверить установку формулярных значений потенциометра ПОПРАВКА НА ТРЕНИЕ(нижний), при необходимости выставить их значения.",
-                test () {
-                    return this.knobControls.frictionErrorNegative.value === this.formularyValues.frictionErrorNegative
-                }
-            },
-            {
-                id: "t121-step3.0",
-                instruction: "Проверить установку формулярного значения потенциометра ЭЛ.БАЛАНСИРОВКА при необходимости выставить формулярное значение.",
-                test () {
-                    return this.knobControls.balance.value === this.formularyValues.balance
-                }
-            },
-            {
-                id: "t121-step4.0",
-                get instruction() {
-                    return self.t121.isHeatingNeeded ? "Включить тумблер обогрев, если температура окружающей среды ниже 0 градусов." : "Отключить тумблер обогрева";
-                },
-                test ()
-                {
-                    return this.isHeatingNeeded ? this.toggles.heating.isEnabled : !this.toggles.heating.isEnabled;
-                }
-            },
-            {
-                id: "t121-step5.0",
-                instruction: "Включить тумблем ПРЕОБРАЗОВ.",
-                test () {
-                    return this.toggles.transformer.isEnabled
-                }
-            },
-            {
-                id: "t121-step6.0",
-                instruction: "Тумблер РАБОТА - СТОПОР установить в положение РАБОТА.",
+                id: "radiostation-step3.1",
+                instruction: "Корректор установить в положение СИМПЛЕКС",
                 test ()  {
-                    return this.toggles.work.isEnabled
+                    return this.knobControls.corrector.alias === "СИМПЛЕКС";
                 }
             },
             {
-                id: "t121-step7.0",
-                instruction: "Включить тумблер КОНТРОЛЬ.",
+                id: "radiostation-step4.0",
+                instruction: "Ручкой громкость установить необходимую громкость сигналов и шумов (при настройке лучше максимальную, затем можно уменьшить).",
                 test () {
-                    return this.toggles.control.isEnabled
+                    return this.knobControls.volume.value >= 50;
                 }
             },
             {
-                id: "t121-step8.0",
-                instruction: "Включить тумблер ГИРОСКОП.",
+                id: "radiostation-step4.1",
+                instruction: "Ручкой шумы установить необходимый установку шумов (при настройке лучше минимальную, затем можно увеличить).",
                 test () {
-                    return this.toggles.gyroscope.isEnabled
+                    return this.knobControls.noise.value <= 40;
                 }
             },
             {
-                id: "t121-step9.0",
-                instruction: "Зафиксировать время включения тумблера ГИРОСКОП.",
-                test() {
-                    return this.toggles.gyroscope.enabledTime
+                id: "radiostation-step5.0",
+                instruction: "Переключатель ФИКСИР.ЧАСТОТЫ поставить в положение 1 и дождаться прекращения вращения ручек УСТАНОВКА ЧАСТОТЫ и НАСТРОЙКА АНТЕННЫ.",
+                test () {
+                    return this.knobControls.fixedFrequencies.alias === "1-я";
                 }
             },
             {
-                id: "t121-step10.0",
-                instruction: "Перейти к КП-4.",
-                test() {
-                    return true;
+                id: "radiostation-step6.0",
+                instruction: "Тумблером под лампой 1 в зависимости от значения рабочей частоты установить первый(20 - 37,75 МГц) либо второй(35,75 - 51,5 МГц) поддиапазон.",
+                test () {
+                    return this.toggles.frequency1range1.isEnabled;
                 }
             },
             {
-                id: "b44-step1.0",
-                instruction: "Выставить карту на КП-4.",
-                test() {
-                    return this.isMapSetted;
+                id: "radiostation-step7.0",
+                instruction: "Открыть крышку, закрывающую доступ к фиксаторам частот.",
+                test () {
+                    return this.lock.isOpened;
                 }
             },
             {
-                id: "b44-step2.0",
-                instruction: "На карте, с помощью ручек боковых панелей КП-4, установить карандаш в начало квадрата места стояния машины.",
-                test() {
-                    const error = 50;
-                    const errorX = Math.abs(this.pencil.x.value - rounded(this.coordinates.x));
-                    const errorY = Math.abs(this.pencil.y.value - rounded(this.coordinates.y));
-
-                    return errorX < error && errorY < error;
+                id: "radiostation-step7.1",
+                instruction: "Расфиксировать фиксатор частоты 1, для чего колпачек специальной отверткой 1 повернуть против хода часовой стрелки примерно на 90\u00B0.",
+                test ()  {
+                    return this.reel.screw1.value === 1;
                 }
             },
             {
-                id: "b44-step3.0",
-                instruction: "На левой боковой панели КП-4 выставить масташ соответствующий мастшабу карты.",
-                test() {
-                    return this.scale === "1 : 50000";
+                id: "radiostation-step7.2",
+                instruction: "Ручкой УСТАНОВКА ЧАСТОТЫ установить по шкале рабочую частоту (отсчет вести с учетом шага между рисками 25МГц)",
+                test () {
+                    return this.knobControls.frequency.value === this.desiredFrequency;
                 }
             },
             {
-                id: "b44-step4.0",
-                instruction: "Открыть защитную крышку счетчика КООРДИНАТЫ X.",
-                test() {
-                    return this.buttonsHandlers.x.isOpened;
+                id: "radiostation-step7.3",
+                instruction: "Зафиксировать фиксатор частоты 1, для чего колпачек специальной отверткой 1 повернуть по ходу часовой стрелки примерно на 90\u00B0.",
+                test ()  {
+                    removeStep('radiostation-step7.1');
+                    return this.reel.screw1.value === 0;
                 }
             },
             {
-                id: "b44-step5.0",
-                instruction: "Открыть защитную крышку счетчика КООРДИНАТЫ Y.",
-                test() {
-                    return this.buttonsHandlers.y.isOpened;
+                id: "radiostation-step7.4",
+                instruction: "Закрыть крышку, закрывающую доступ к фиксаторам частот.",
+                test () {
+                    removeStep('radiostation-step7.0');
+                    return !this.lock.isOpened;
                 }
             },
             {
-                id: "b44-step6.0",
-                instruction: "Выставить значение счетчика КООРДИНАТЫ X в соответствии с координатой X карандаша на карте.",
-                test() {
-                    return this.counters.x === rounded(this.coordinates.x);
+                id: "radiostation-step8.0",
+                instruction: "Перевести тангенту нагрудного переключателя в положение ПРД",
+                test () {
+                    return this.ptt.isEnabled;
                 }
             },
             {
-                id: "b44-step7.0",
-                instruction: "Выставить значение счетчика КООРДИНАТЫ Y в соответствии с координатой Y карандаша на карте.",
-                test() {
-                    return this.counters.y === rounded(this.coordinates.y);
-                }
-            },
-            {
-                id: "b44-step8.0",
-                instruction: "Закрыть защитную крышку счетчика КООРДИНАТЫ Y.",
-                test() {
-                    removeStep("b44-step5.0");
-                    return !this.buttonsHandlers.y.isOpened;
-                }
-            },
-            {
-                id: "b44-step9.0",
-                instruction: "Закртыь защитную крышку счетчика КООРДИНАТЫ X.",
-                test() {
-                    removeStep("b44-step4.0");
-                    return !this.buttonsHandlers.x.isOpened;
-                }
-            },
-            {
-                id: "b44-step10.0",
-                instruction: "Открыть защитную крышку счетчика ПУТЬ.",
-                test() {
-                    return this.buttonsHandlers.path.isOpened;
-                }
-            },
-            {
-                id: "b44-step11.0",
-                instruction: "Выставить значение счетчика ПУТЬ ровное нулю.",
-                test() {
-                    return this.counters.path === 0;
-                }
-            },
-            {
-                id: "b44-step12.0",
-                instruction: "Закрыть защитную крышку счетчика ПУТЬ.",
-                test() {
-                    removeStep("b44-step10.0");
-                    return !this.buttonsHandlers.path.isOpened;
-                }
-            },
-            {
-                id: "b44-step13.0",
-                instruction: "С помощью ручек передней панели КП-4 довести значения счетчиков КООРДИНАТ X и Y до значений координат X и Y места стояния машины",
-                test() {
-                    removeStep("b44-step2.0");
-                    removeStep("b44-step6.0");
-                    removeStep("b44-step7.0");
-                    return this.counters.x === this.coordinates.x && this.counters.y === this.coordinates.y;
-                }
-            },
-            {
-                id: "b44-step14.0",
-                instruction: "Установить дирекционный угол на КП в соответствии с дирекционным углом оси машины",
-                test() {
-                    return this.rightAngle.value == this.angle.value;
-                }
-            },
-            {
-                id: "b44-step15.0",
-                instruction: "Установить КОЭФ. КОРР. в соответствии с формулярными значениями КОЭФ. КОРР. для ДДС",
-                test() {
-                    return this.rightCorrection === this.correction;
-                }
-            },
-            {
-                id: "b44-step16.0",
-                instruction: "Переключить тумблер ПУТЬ в положение ВКЛ",
-                test() {
-                    return this.path === "ВКЛ";
-                }
-            },
-            {
-                id: "b44-step17.0",
-                instruction: "Зафиксировать время окончания работы",
-                test() {
-                    if (this.finishedTime) {
-                        self.showModalDialog();
+                id: "radiostation-step9.0",
+                instruction: "Вращением ручки НАСТРОЙКА АНТЕНЫ отыскать наибольшее откланеие стрелки или самое яркое свечение индикаторной лампочки",
+                test () {
+                    if(Math.abs(this.knobControls.antennaTuner.value - this.desiredAntenna) <= 5) {
+                        self.timeout(() => self.showModalDialog(), 1000);
                         return true;
-                    } else {
-                        return false;
                     }
                 }
             },
             {
-                id: "b44-step17.0",
-                instruction: "",
+                id: "radiostation-step10.0",
+                instruction: "Задание выполнено",
                 test() {
                     return true;
                 }
@@ -246,10 +140,6 @@ export default class ExaminerService {
                     };
                 }
             });
-        }
-
-        function rounded(value) {
-            return Math.floor(value / 1000) * 1000;
         }
 
         this.currentStep = this.steps[0];
@@ -280,12 +170,7 @@ export default class ExaminerService {
     }
 
     isStepTestSuccess(step) {
-        //return true;
-        if (step.id.indexOf("t121") !== -1) {
-            return step.test.apply(this.t121);
-        } else {
-            return step.test.apply(this.b44);
-        }
+        return step.test.apply(this.radiostation);
     }
 
     testAllBefore(stepId) {

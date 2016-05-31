@@ -1,0 +1,22 @@
+radiostation-frequency-scale {
+    position: absolute;
+    right: 50.15%;
+    top: 24.6%;
+    width: 10%;
+    height: 7.1%;
+}
+
+radiostation-frequency-scale > .frequency-scale {
+    width: 100%;
+    height: 100%;
+    background: url("img/trainer/radiostation/frequency-scale/scale.png") no-repeat;
+    background-size: auto 100%;
+}
+
+radiostation-frequency-scale hr {
+    margin: 0 auto;
+    width: 1.4%;
+    height: 100%;
+    border: none;
+    background-color: rgba(255, 0, 0, 0.50);
+}

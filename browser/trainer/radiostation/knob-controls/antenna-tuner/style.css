@@ -1,0 +1,24 @@
+radiostation-antenna-tuner-knob-control {
+    width:10%;
+    height: 14%
+}
+radiostation-antenna-tuner-knob-control .knob-control {
+    position: relative;
+    background: url("img/trainer/radiostation/knob-controls/antenna-tuner/knob.png") center center no-repeat;
+    background-size: contain;
+}
+
+radiostation-antenna-tuner-knob-control .knob-controll-kernel {
+    position: absolute;
+    top: 23%;
+    left: 24%;
+    width: 50%;
+    height: 60%;
+    background: url("img/trainer/radiostation/knob-controls/antenna-tuner/kernel.png") center center no-repeat;
+    background-size: contain;
+}
+
+radiostation-antenna-tuner-knob-control .knob-control-regulators {
+    top: 25%;
+    right: 6%;
+}

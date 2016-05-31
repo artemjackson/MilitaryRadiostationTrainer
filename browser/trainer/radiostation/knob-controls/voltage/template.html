@@ -1,0 +1,8 @@
+<div class="knob-control-wrapper">
+    <div class="knob-control" style="-webkit-transform: rotate({{model.currentAngle + 'deg'}})">
+    </div>
+    <div class="knob-control-regulators">
+        <div class="knob-control-regulator" ng-click="model.increase()" interval="model.rotationSpeed">+</div>
+        <div class="knob-control-regulator" ng-click="model.decrease()" interval="model.rotationSpeed">-</div>
+    </div>
+<div>

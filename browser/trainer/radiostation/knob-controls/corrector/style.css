@@ -1,0 +1,8 @@
+radiostation-corrector-knob-control {
+    width: 6.5%;
+    height: 11.5%
+}
+radiostation-corrector-knob-control .knob-control {
+    background: url("img/trainer/radiostation/knob-controls/corrector/knob.png") center center no-repeat;
+    background-size: contain;
+}

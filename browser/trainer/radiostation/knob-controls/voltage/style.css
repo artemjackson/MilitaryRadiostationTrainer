@@ -1,0 +1,8 @@
+radiostation-voltage-knob-control {
+    width: 6.5%;
+    height: 11.5%
+}
+radiostation-voltage-knob-control .knob-control {
+    background: url("img/trainer/radiostation/knob-controls/voltage/knob.png") center center no-repeat;
+    background-size: contain;
+}

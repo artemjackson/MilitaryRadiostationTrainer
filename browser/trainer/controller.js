@@ -1,12 +1,10 @@
 "use strict";
 
 export default class TrainerController{
-    constructor(examiner, t121, b44, weather, resetNeeded, mode){
+    constructor(examiner, radiostation, resetNeeded, mode){
         if(resetNeeded){
             examiner.reset();
-            t121.reset();
-            b44.reset();
-            weather.reset();
+            radiostation.reset();
         }
 
         examiner.mode = mode;

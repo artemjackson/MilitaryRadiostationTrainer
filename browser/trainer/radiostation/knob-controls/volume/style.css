@@ -1,0 +1,8 @@
+radiostation-volume-knob-control {
+    width: 8.5%;
+    height: 12.5%
+}
+radiostation-volume-knob-control .knob-control {
+    background: url("img/trainer/radiostation/knob-controls/volume/knob.png") center center no-repeat;
+    background-size: contain;
+}

@@ -1,0 +1,9 @@
+<div class="lock-wrapper">
+    <div class="lock" ng-class="ctrl.lock.isOpened ? 'opened' : 'closed'" ng-click="ctrl.lock.toggle()"></div>
+    <radiostation-reel ng-class="ctrl.lock.isOpened ? 'opened' : 'closed' " model="ctrl.reel"></radiostation-reel>
+
+        <div class="lock-cover" ng-class="ctrl.lock.isOpened ? 'opened' : 'closed'" ng-click="ctrl.lock.toggle()">
+            <div class="lock-cover-inner" ng-class="{'hint-closest' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step7.4'}" ng-mousedown="ctrl.examiner.testAllBefore('radiostation-step7.4')" ng-click="ctrl.examiner.nextStepTo('radiostation-step7.4')"></div>
+        </div>
+
+</div>

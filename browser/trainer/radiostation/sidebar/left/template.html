@@ -1,0 +1,70 @@
+<div class="sidebar left">
+    <div class="navigation">
+        <!-- <a ng-class="{'hint-reverse' : ctrl.examiner.isTrainingMode() && ctrl.examiner.currentStep.id === 'radiostation-step10.0'}"
+           ng-click="ctrl.examiner.nextStepTo('radiostation-step10.0')"
+           ui-sref="trainer.b44">&#10092 Переход к КП</a> -->
+    </div>
+    <ul class="indicators">
+        <li class="indicator">
+            <label for="latitude">Контроль напряжений: </label>
+            <input type="text" id="latitude" ng-value="ctrl.radiostation.knobControls.voltage.alias" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error">Громкость:</label>
+            <input type="text" id="friction-error" ng-value="ctrl.radiostation.knobControls.volume.value" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error">Шумы:</label>
+            <input type="text" id="friction-error" ng-value="ctrl.radiostation.knobControls.noise.value" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error">Корректор:</label>
+            <input type="text" id="friction-error" ng-value="ctrl.radiostation.knobControls.corrector.alias" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="friction-error2">Фиксир. частоты: </label>
+            <input type="text" id="friction-error2" ng-value="ctrl.radiostation.knobControls.fixedFrequencies.alias" disabled/>
+        </li>
+        <li class="indicator">
+            <label for="balance">Установка частоты:</label>
+            <input type="text" id="balance" ng-value="ctrl.radiostation.knobControls.frequency.value | number" disabled/>
+        </li>
+    </ul>
+    <hr>
+    <ul class="tumblers">
+        <li>
+            <p>Шкала:</p>
+
+            <p> {{ctrl.radiostation.toggles.scale.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Тон вызов:</p>
+
+            <p> {{ctrl.radiostation.toggles.tone.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Питание:</p>
+
+            <p>{{ctrl.radiostation.toggles.power.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+
+        <!-- <li>
+            <p>Контроль:</p>
+
+            <p>{{ctrl.radiostation.toggles.gyroscope.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Работа:</p>
+
+            <p> {{ctrl.radiostation.toggles.work.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li>
+        <li>
+            <p>Контроль:</p>
+
+            <p> {{ctrl.radiostation.toggles.control.isEnabled ? "ВКЛ" : "ВЫКЛ"}}</p>
+        </li> -->
+    </ul>
+    <div class="back-link">
+        <a ui-sref="menu">&#10092 Вернуться в Меню</a>
+    </div>
+</div>

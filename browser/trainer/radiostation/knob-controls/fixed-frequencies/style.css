@@ -1,0 +1,13 @@
+radiostation-fixed-frequencies-knob-control {
+    width: 13%;
+    height: 20%
+}
+radiostation-fixed-frequencies-knob-control .knob-control {
+    background: url("img/trainer/radiostation/knob-controls/fixed-frequencies/knob.png") center center no-repeat;
+    background-size: contain;
+}
+
+radiostation-fixed-frequencies-knob-control  .knob-control-regulators {
+    top: 29%;
+    right: 8%;
+}

@@ -41,8 +41,8 @@ button.md-focused {
 
 .hint:before {
     position: absolute;
-    top: 60%;
-    left: -30%;
+    top: 10%;
+    left: -150%;
     text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
     color: rgba(195, 15, 0, 0.8);
     font-size: 10vh;
@@ -53,8 +53,8 @@ button.md-focused {
 
 .hint-closer:before {
     position: absolute;
-    top: 30%;
-    left: -30%;
+    top: 70%;
+    left: -55%;
     text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
     color: rgba(195, 15, 0, 0.8);
     font-size: 10vh;
@@ -78,7 +78,7 @@ button.md-focused {
 .hint-closest:before {
     position: absolute;
     top: 45%;
-    left: -55%;
+    left: -25%;
     text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
     color: rgba(195, 15, 0, 0.8);
     font-size: 10vh;
@@ -114,9 +114,9 @@ button.md-focused {
 
 .hint-upper-closer:before {
     position: absolute;
-    top: -90%;
-    left: -60%;
-    transform: scaleY(-1);
+    top: -230%;
+    left: -110%;
+    transform: rotate(120deg);
     text-shadow: 2px 2px 20px rgba(190, 30, 50, 0.3), 2px 2px 20px rgba(255, 255, 255, 0.3);
     color: rgba(195, 15, 0, 0.8);
     font-size: 10vh;

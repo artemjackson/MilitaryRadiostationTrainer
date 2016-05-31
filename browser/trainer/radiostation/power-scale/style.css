@@ -1,0 +1,29 @@
+radiostation-power-scale {
+    position: absolute;
+    right: 16.5%;
+    top: 42%;
+    width: 10%;
+    height: 10%;
+}
+
+radiostation-power-scale:after {
+    display: none;
+    content:
+            url("img/trainer/radiostation/power-scale/normal.png")
+}
+
+radiostation-power-scale > .power-scale {
+    width: 100%;
+    height: 100%;
+}
+
+radiostation-power-scale > .power-scale.low {
+    background: url("img/trainer/radiostation/power-scale/low.png") no-repeat;
+    background-size: contain;
+}
+
+
+radiostation-power-scale > .power-scale.normal {
+    background: url("img/trainer/radiostation/power-scale/normal.png") no-repeat;
+    background-size: contain;
+}

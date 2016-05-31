@@ -1,0 +1,76 @@
+.sidebar {
+    position: relative;
+    height: 100%;
+    width: 16.5%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+@media all and (min-width: 1441px) {
+    .sidebar {
+        width: 14%;
+    }
+}
+
+.navigation {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.navigation a {
+    font-size: 2.4vh;
+}
+
+.sidebar.left {
+    float: left;
+}
+
+.sidebar.right {
+    float: right;
+}
+
+.sidebar ul {
+    margin-bottom: 10%;
+}
+
+.sidebar li {
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.sidebar li p {
+    margin: 0;
+}
+
+.sidebar hr {
+    border: 0;
+    height: 2px;
+    margin-bottom: 10%;
+    background-image: linear-gradient(to right, rgba(256, 256, 256, 0), rgba(256, 256, 256, 0.75), rgba(256, 256, 256, 0));
+}
+
+.indicator {
+    position: relative;
+    padding-bottom: 1%;
+}
+
+.indicator input[type="text"] {
+    display: block;
+    width: 80%;
+
+    padding-left: 5%;
+
+    background: rgba(256, 256, 256, 0.08);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.indicator input[type="text"]:focus {
+    border: 1px solid rgba(256, 256, 256, 0.6);
+    outline: none;
+}
+
+.clock {
+    position: absolute;
+    bottom: 0;
+}
