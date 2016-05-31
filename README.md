@@ -1,4 +1,4 @@
-# military-navigation-equipment-trainer
+# military-radiostation-equipment-trainer
 
 nodejs 4.x and npm are required
 
